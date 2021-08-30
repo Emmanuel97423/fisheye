@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+html{
+    font-family:'DM sans'
+}
+h1{
+    font-family: DM Sans;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $primary-bg;
+}
+h2{
+    font-family: DM Sans;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: $primary-text;
+}
+h3 {
+    font-family: DM Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: $primary-bg;
+}
+span {
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: $primary-bg;
+}
+p {
+    font-family: DM Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.box__list--price{
+    font-family: DM Sans;
+font-size: 9px;
+font-style: normal;
+font-weight: 400;
+line-height: 12px;
+letter-spacing: 0em;
+text-align: center;
+color: #757575;
+
+
+}
+
+  
