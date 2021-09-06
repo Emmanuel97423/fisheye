@@ -51,15 +51,18 @@ p {
     letter-spacing: 0em;
     text-align: center;
 }
+.fas {
+    color: $primary-bg;
+}
 .box__list--price{
     font-family: DM Sans;
-font-size: 9px;
-font-style: normal;
-font-weight: 400;
-line-height: 12px;
-letter-spacing: 0em;
-text-align: center;
-color: #757575;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #757575;
 
 
 }

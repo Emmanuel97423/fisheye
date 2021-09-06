@@ -1,0 +1,107 @@
+.box__photographer {
+      
+    &--nav {
+        max-width:$container-max-width;
+        margin: 0 auto;
+        padding:  20px 0;
+        overflow: auto;
+            img {
+                width:200px;
+            }
+    }
+    &--data{
+        max-width:$container-max-width;
+        margin: 0 auto;
+        overflow: auto;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+           
+          img {
+            width:200px;
+            height:200px;
+            margin: 3rem  0 1rem 0;
+            clip-path:ellipse(50% 50%);
+            object-fit: cover;
+        }
+        ul{
+        display:flex; 
+        justify-content:space-between;
+      
+    }
+        span {
+            border: 1px solid #C4C4C4;
+            border-radius:11px;
+            padding: 4px;
+            margin:0 4px 0 0;
+        }
+    }
+    &--text {
+        width: 100%;
+        height: 150px;
+        padding:2rem 0 2rem 0;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-basis: 0;  
+    }
+    &--filter {
+        max-width: $container-max-width;
+        height: auto;
+        margin: 0 auto;
+        overflow: auto;
+        display:flex;
+        
+    }
+    &--list {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        margin: 2rem;
+        
+        img {
+            width: 350px;
+            height:300px;
+            object-fit: cover;
+            border-radius: 5px;
+            
+        };
+        p{
+            color: $primary-bg;
+        }
+        &--data{
+            width: 100%;  
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            margin: 1rem 0;
+            :nth-child(1){
+                flex-shrink: 0;
+            }
+           
+            :nth-child(2){
+               display: flex;
+               width: 100%;
+            justify-content: flex-end;
+              flex-shrink: 1;
+              margin:0 .5rem
+
+                
+               
+                
+            }
+            p, span {
+                
+                font-size:16px;
+                
+            }
+            
+        }
+    }
+}
+
+

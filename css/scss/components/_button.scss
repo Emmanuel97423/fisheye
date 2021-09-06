@@ -1,0 +1,50 @@
+%btn-common{
+     display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border:none;
+    line-height: normal;
+    font-weight: bold;
+    font-style: normal;
+    transition: all 0.25s;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    touch-action: manipulation;
+    outline: none;
+    user-select: none;
+    letter-spacing: 1px;
+};
+
+@mixin btn  {
+    background-color: $primary-bg;
+    &:hover {
+        background-color:$secondary-bg;
+        box-shadow: 0 .125em rgba(255,255,255,.4), inset 0 .063em   rgba(255,255,255,.4), inset 0 -0.188em $secondary-text-red;
+    }
+};
+@mixin get_size($height, $font) {
+     $padding: floor(($height - ($font * 1.4)) / 2);
+        padding: 0 $padding;
+        height: $height;
+        font-size: $font;
+};
+@mixin btn-xl {
+    @include get_size(40px, 14px)
+}
+ 
+.btn {
+    color:White;
+    text: {
+        
+      
+      decoration: none;
+      shadow: 0 .063em rgba(0,0,0,.3);
+   };
+   @extend %btn-common;
+   @include btn
+}
+.btn-xl {
+    @include btn-xl
+}
