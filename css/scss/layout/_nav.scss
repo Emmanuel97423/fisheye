@@ -1,62 +1,159 @@
+//Mobile first Nav
 .box__navbar {
-    max-width: 1900px;
-    height:70px;
-    @include media-max("phone-up"){
-        height:170px;
-        
-    };
-
- &--container { 
-    width: 80%;
+    @extend %edged;
+    max-width: 320px;
+    height:170px;
+    margin-top:30px;
     display:flex;
-    justify-content:space-around;
-    align-items:center;
-    margin: 0 auto;
-    padding:  20px 0;
-    
-      @include media-max("phone-up"){
+    justify-content:center;
+      @include media-min("phone-up-400"){
+            width: 100%;
+            max-width: 350px;  
+            // background-color:red;
+                 };
+        @include media-min("tablet-up-768"){
+            // width: 100%;
+            max-width: 650px;  
+            }   
+            
+        @include media-min("laptop-1024"){
+             margin-top:0;
+            max-width: 980px;
+            height:90px;
+            
+        }    
+    &--container {
+        display:flex;
         width: 100%;
-        height:170px;
+        height:auto;
         justify-content:space-around;
         align-items:center;
         flex-wrap: wrap;
-            h1{ 
-               font-size:14px;
-                
-            }     
-    };
-            //logo
-            img {
-                width: 200px
+            @include media-min("phone-up-400"){
+                justify-content:space-between;
             }
+            @include media-min("laptop-1024"){
+                
+                flex-wrap: nowrap;
+            }
+        
+            h1{ 
+               font-size:12px; 
+               @include media-min("laptop-1024"){
+                   font-size: 24px;
+                   font-weight:400;
+               }
+                 
+             }   
+            img {
+            width: 100px;
+            @include media-min("laptop-1024"){
+                width: 150px
+            }
+            @include media-min("tablet-up-768"){
+                width: 150px
+            }
+        }
             ul{
-                display:flex; 
-                @include media-max("phone-up"){
-                    width: 90%;
-                    height:auto;
-                    justify-content:center;
-                    align-items: center;
-                    flex-wrap: wrap;
-                    margin: 1rem 0 1rem 0;
-                    order:2;
-                    li {
-                        margin: 0 0 1rem 0;
+                display:flex;
+                width: 100%;
+                height:auto;
+                justify-content:center;
+                align-items: center;
+                flex-wrap: wrap;
+                margin: 1rem 0 1rem 0;
+                order:2;
+                @include media-min("laptop-1024") {     
+                    //  background-color:red;
+                    order:0; 
+                    width: 60%;
+                    height: 100px;
+                    margin: 0;
+                   
+                    
+                }
+
+                li {
+                     margin: 0 0 1rem 0;
+                     @include media-min("laptop-1024") { 
+                         margin: 0;
+                     }
+                    }  
+                span {
+                    border: 1px solid #C4C4C4;
+                    border-radius:11px;
+                    padding: 4px;
+                    margin:0 4px 0 0;
+                 
+                    
                     }
+              
+                            
+                }
+    }
+}
+
+
+// .box__navbar {
+//     @extend %edged;
+//     max-width: 350px;
+//     height:70px;
+//     @include media-min("phone-up"){
+//         height:170px;
+        
+//     };
+
+//  &--container { 
+//     width: 80%;
+//     display:flex;
+//     justify-content:space-around;
+//     align-items:center;
+//     margin: 0 auto;
+//     padding:  20px 0;
+    
+//       @include media-min("phone-up"){
+//         width: 100%;
+//         height:170px;
+//         justify-content:space-around;
+//         align-items:center;
+//         flex-wrap: wrap;
+//             h1{ 
+//                font-size:14px;
+                
+//             }     
+//     };
+//             //logo
+//             img {
+//                 width: 200px
+//             }
+//             ul{
+//                 display:flex; 
+//                 @include media-min("phone-up"){
+//                     width: 90%;
+//                     height:auto;
+//                     justify-content:center;
+//                     align-items: center;
+//                     flex-wrap: wrap;
+//                     margin: 1rem 0 1rem 0;
+//                     order:2;
+//                     li {
+//                         margin: 0 0 1rem 0;
+//                     }
                     
             
-    };
+//     };
                             
-            }
-            span {
-                border: 1px solid #C4C4C4;
-                border-radius:11px;
-                padding: 4px;
-                margin:0 4px 0 0;
+//             }
+//             span {
+//                 border: 1px solid #C4C4C4;
+//                 border-radius:11px;
+//                 padding: 4px;
+//                 margin:0 4px 0 0;
                
-            }
+//             }
             
     
- }
+//  }
 
       
-}
+// }

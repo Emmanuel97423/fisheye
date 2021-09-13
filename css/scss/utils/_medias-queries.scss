@@ -1,23 +1,24 @@
 $breakpoints: (
     "phone-down": 500px,
-    "phone-up": 375px,
-    "tablet-up": 768px,
+    "phone-up-400": 400px,
+    "phone-up-320": 320px,
+    "tablet-up-768": 768px,
     "tablet-down": 900px,
+    "laptop-1024":1024px,
     "desktop-up": 1024px,
     "desktop-down": 1280px,
     "widescreen-up": 1440px
 );
-@mixin media-max($_key) {
-    @media screen and (max-width: map-get($breakpoints, $_key)) {
+@mixin media-min($_key) {
+    @media screen and (min-width: map-get($breakpoints, $_key)) {
         &{ @content; }
     }
 }
-
 %edged {
     width: 100%;
     margin: 0 auto;
     @each $_key, $_value in $breakpoints {
-        @include media-max($_key) {
+        @include media-min($_key) {
             width: ($_value - 100px);
         }
     }
