@@ -1,0 +1,33 @@
+.footer {
+  display: none;
+    @include media-min ("tablet-up-768") {
+          position: absolute;
+        bottom: 0;
+        right: 20px;
+        display: flex;
+        background-color:$secondary-bg;
+        height: 60px;
+        width: 250px;
+        border-radius: 5px 5px 0 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__box {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+            p{
+                font-size: 14px;
+                font-weight: bold;
+            }
+            i {
+                color: black;
+                margin-left:0.5rem;
+            }
+
+    }
+
+}

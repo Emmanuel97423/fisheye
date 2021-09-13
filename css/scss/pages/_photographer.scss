@@ -1,49 +1,69 @@
+
 .box__photographer {
+    
     &--nav {
-        max-width: 350px;
+        @extend %edged;
+        width: 100%;
+        max-width: 320px;
         height: auto;
         padding: 1.5rem  0 0 0;
-        @extend %edged;
         img {
             width: 150px;
             height: auto; 
         }
-        @include media-min ("phone-up") {
-            min-width: 380px;
+        @include media-min ("phone-up-320") {
+            max-width: 290px;
         }
-        @include media-min ("tablet-up") {
+        @include media-min ("phone-up-400") {
+            max-width: 400px;
+        }
+        @include media-min ("tablet-up-768") {
             max-width: 700px;
         }
+         @include media-min ("laptop-1024") {
+            max-width: 900px;
+        }
+        
 
     }
     &--data {
         @extend %edged;
-        max-width: 350px;
+        width: 100%;
+        max-width: 320px;
         height: 115px;
         display: flex;
         justify-content:space-between;
         align-items:center;
         padding: 1.5rem 0 ;
-        
-          @include media-min ("phone-up") {
-            min-width: 380px;
+         @include media-min ("phone-up-320") {
+            max-width: 290px;
         }
-           @include media-min ("tablet-up") {
+        
+          @include media-min ("phone-up-400") {
+            max-width: 400px;
+           
+        }
+           @include media-min ("tablet-up-768") {
             max-width: 700px;   
+        }
+          @include media-min ("laptop-1024") {
+            max-width: 900px;
         }
         img{ 
             width:30%;
             height:auto;
             object-fit: cover; 
             clip-path:ellipse(50% 40%);
-               @include media-min ("tablet-up") {
+               @include media-min ("tablet-up-768") {
                    width: 15%;
                 clip-path:ellipse(50% 40%);      
                 
                 }
+ 
         }
     }
     &--text { 
+        
         width: 70%;
         height: 120px;
         display: flex;
@@ -55,13 +75,6 @@
             width:80%;
             overflow: hidden;
             display: flex;
-            @include media-min ("phone-up") {
-                width:70%;
-                
-            }
-            @include media-min ("tablet-up") {
-                width:100%;
-            }
              span {
             border: 1px solid #C4C4C4;
             border-radius:11px;
@@ -72,21 +85,51 @@
     }
     &--filter {
         @extend %edged;
+        width: 100%;
+        display:flex;
+        align-items: center;
+        font-weight: bold;
+        select {
+            margin-left:5px;
+            background-color: $primary-bg;
+            color: white;
+            padding:5px;
+            border-radius:5px;
+            letter-spacing: 1px;
+                option {
+              
+                border-bottom: 1px solid white;
+            }
+        };
+        
             display:none;
-            @include media-min ("tablet-up") {
+            @include media-min ("tablet-up-768") {
                 display: flex;
                 max-width: 700px;
                 padding:0 0 1.5rem 0;
             }
+            @include media-min ("laptop-1024") {
+            max-width: 900px;
+        }
     }
     &--list {
         @extend %edged;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 700px;
+        max-width: 400px;
+        margin-top: 30px;
         // margin: 2rem;
+
+         @include media-min ("phone-up-320") {
+            max-width: 290px;
+        }
+            @include media-min ("phone-up-400") {
+            max-width: 400px;
+           
+        }
             @include media-min ("tablet-up") {
                 flex-direction: row;
                 justify-content: flex-start;
@@ -98,10 +141,13 @@
             object-fit: cover;
             object-position: 50% 30%;
             border-radius: 5px;
-            @include media-min ("phone-up"){
-                 width: 380px;
+             @include media-min ("phone-up-320") {
+            width: 290px;
+        }
+            @include media-min ("phone-up-400"){
+                 width: 400px;
             }
-            @include media-min ("tablet-up"){
+            @include media-min ("tablet-up-768"){
                  width: 330px;
             }
             
@@ -138,14 +184,20 @@
         }
     }
     &--contact { 
+        
+        @extend %edged;
+        position: absolute;
         width: 100%;
-        max-width: 350px;
+        max-width: 400px;
         bottom: 30px;
-        position: fixed;  
+        left:0;
+        right: 0;
+        
         display: flex;
         justify-content:center;
         align-items:center;
-        @include media-min ("tablet-up") {
+       
+        @include media-min ("tablet-up-768") {
             position: relative;
             display: flex;
             bottom: 0;
