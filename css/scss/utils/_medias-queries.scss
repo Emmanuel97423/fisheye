@@ -1,13 +1,15 @@
 $breakpoints: (
-    "phone-down": 500px,
+    "phone-up-360": 360px,
     "phone-up-400": 400px,
-    "phone-up-320": 320px,
-    "tablet-up-768": 768px,
-    "tablet-down": 900px,
-    "laptop-1024":1024px,
-    "desktop-up": 1024px,
-    "desktop-down": 1280px,
-    "widescreen-up": 1440px
+    "phone-up-480": 480px,
+    "phone-down-600": 600px, 
+    "tablet-up-720": 720px,
+    "tablet-up-840": 840px,
+    "tablet-down-1024": 1024px,
+    "tablet-down-1280": 1280px,
+    "desktop-1024": 1024px,
+    "desktop-1280": 1280px,
+    // "widescreen-up": 1440px,
 );
 @mixin media-min($_key) {
     @media screen and (min-width: map-get($breakpoints, $_key)) {

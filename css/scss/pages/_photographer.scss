@@ -1,54 +1,57 @@
 
+.photographer__container {
+    width: 100%;
+}
+
 .box__photographer {
     
     &--nav {
-        @extend %edged;
-        width: 100%;
-        max-width: 320px;
+        // @extend %edged;
+        // width: 100%;
         height: auto;
         padding: 1.5rem  0 0 0;
         img {
             width: 150px;
             height: auto; 
         }
-        @include media-min ("phone-up-320") {
-            max-width: 290px;
-        }
-        @include media-min ("phone-up-400") {
-            max-width: 400px;
-        }
-        @include media-min ("tablet-up-768") {
-            max-width: 700px;
-        }
-         @include media-min ("laptop-1024") {
-            max-width: 900px;
-        }
+        // @include media-min ("phone-up-320") {
+        //     max-width: 290px;
+        // }
+        // @include media-min ("phone-up-400") {
+        //     max-width: 400px;
+        // }
+        // @include media-min ("tablet-up-768") {
+        //     max-width: 700px;
+        // }
+        //  @include media-min ("laptop-1024") {
+        //     max-width: 900px;
+        // }
         
 
     }
     &--data {
         @extend %edged;
-        width: 100%;
-        max-width: 320px;
+        // width: 100%;
+        // max-width: 270px;
         height: 115px;
         display: flex;
         justify-content:space-between;
         align-items:center;
         padding: 1.5rem 0 ;
-         @include media-min ("phone-up-320") {
-            max-width: 290px;
-        }
+        //  @include media-min ("phone-up-320") {
+        //     max-width: 290px;
+        // }
         
-          @include media-min ("phone-up-400") {
-            max-width: 400px;
+        //   @include media-min ("phone-up-400") {
+        //     max-width: 400px;
            
-        }
-           @include media-min ("tablet-up-768") {
-            max-width: 700px;   
-        }
-          @include media-min ("laptop-1024") {
-            max-width: 900px;
-        }
+        // }
+        //    @include media-min ("tablet-up-768") {
+        //     max-width: 700px;   
+        // }
+        //   @include media-min ("laptop-1024") {
+        //     max-width: 900px;
+        // }
         img{ 
             width:30%;
             height:auto;
@@ -123,33 +126,33 @@
         margin-top: 30px;
         // margin: 2rem;
 
-         @include media-min ("phone-up-320") {
-            max-width: 290px;
-        }
-            @include media-min ("phone-up-400") {
-            max-width: 400px;
+        //  @include media-min ("phone-up-320") {
+        //     max-width: 290px;
+        // }
+        //     @include media-min ("phone-up-400") {
+        //     max-width: 400px;
            
-        }
-            @include media-min ("tablet-up") {
-                flex-direction: row;
-                justify-content: flex-start;
-                flex-wrap: wrap;
-            }
+        // }
+        //     @include media-min ("tablet-up") {
+        //         flex-direction: row;
+        //         justify-content: flex-start;
+        //         flex-wrap: wrap;
+        //     }
         img {
-            width: 350px;
-            height:200px;
+            width: 100%;
+            // height:200px;
             object-fit: cover;
             object-position: 50% 30%;
             border-radius: 5px;
-             @include media-min ("phone-up-320") {
-            width: 290px;
-        }
-            @include media-min ("phone-up-400"){
-                 width: 400px;
-            }
-            @include media-min ("tablet-up-768"){
-                 width: 330px;
-            }
+        //      @include media-min ("phone-up-320") {
+        //     width: 290px;
+        // }
+        //     @include media-min ("phone-up-400"){
+        //          width: 400px;
+        //     }
+        //     @include media-min ("tablet-up-768"){
+        //          width: 330px;
+        //     }
             
         };
         p{
