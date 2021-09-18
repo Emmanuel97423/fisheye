@@ -15,6 +15,7 @@
                 width: 20%;
                 order:1
             }
+          
             
         }
         h1 {
@@ -22,6 +23,13 @@
             @include media-min("tablet-up-720") {
                 width: 40%;
                 justify-self: flex-end;
+                order:3
+            }
+            @include media-min("desktop-1024") {
+                font-size:24px;
+                width: 40%;
+                justify-self: flex-end;
+                align-self: start;
                 order:3
             }
         }

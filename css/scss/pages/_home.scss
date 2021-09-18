@@ -6,8 +6,13 @@
     align-items:center;
     margin: 20px auto;
     // background-color:red;
+
+  
     &__list {
         width: 100%;
+          @include media-min ("desktop-1024") {
+             margin: 50px auto;
+    }
         &--card {
             flex:20%;
             width: 100%;
@@ -15,10 +20,18 @@
             flex-direction: column;
             justify-content:center;
             align-items:center;
+            @include media-min ("tablet-up-720") {
+                width: 30%;
+            }
             img {
                 width: 60%;
                 clip-path:ellipse(50% 40%);
                 object-fit: cover;
+                 @include media-min("desktop-1024") {
+                width: 50%;
+               
+            }
+          
             }
         }
         &--text {
@@ -33,15 +46,18 @@
             flex:20%;
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items:center;
             margin-top: 10px;
                 span {
                 border: 1px solid #C4C4C4;
                 border-radius:11px;
-                // padding: 4px;
+                padding: 3px;
                 // margin:0 4px 0 0;
             
+                }
+                @include media-min ("desktop-1024") {
+                     width: 90%;
                 }
         }
     }
