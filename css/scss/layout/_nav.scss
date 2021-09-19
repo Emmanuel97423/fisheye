@@ -64,6 +64,19 @@
     // }
 }
 
+//Photographer section
+.box__photographer {
+    &--container{
+        width:90%
+    }
+    &--nav {
+        width: 100%;
+        img {
+            width: 50%;
+        }
+    }
+
+}
 
 
 // //Mobile first Nav
