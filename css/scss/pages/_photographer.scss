@@ -1,107 +1,315 @@
+
 .box__photographer {
-      
-    &--nav {
-        max-width:$container-max-width;
-        margin: 0 auto;
-        padding:  20px 0;
-        overflow: auto;
-            img {
-                width:200px;
+    &--container {
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        
+       
+        margin: 20px auto;
+    }
+    &--data {
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        width: 100%;
+                 @include media-min ("tablet-up-720") {
+                height: 150px;
             }
-    }
-    &--data{
-        max-width:$container-max-width;
-        margin: 0 auto;
-        overflow: auto;
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-           
-          img {
-            width:200px;
-            height:200px;
-            margin: 3rem  0 1rem 0;
-            clip-path:ellipse(50% 50%);
+        img {
+            clip-path:ellipse(50% 35%);
             object-fit: cover;
-        }
-        ul{
-        display:flex; 
-        justify-content:space-between;
-      
-    }
-        span {
-            border: 1px solid #C4C4C4;
-            border-radius:11px;
-            padding: 4px;
-            margin:0 4px 0 0;
+            width: 30%;
+            @include media-min ("tablet-up-720") {
+                width: 20%;
+            }
+            
         }
     }
     &--text {
         width: 100%;
-        height: 150px;
-        padding:2rem 0 2rem 0;
-        display:flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-        flex-basis: 0;  
-    }
-    &--filter {
-        max-width: $container-max-width;
-        height: auto;
-        margin: 0 auto;
-        overflow: auto;
-        display:flex;
-        
-    }
-    &--list {
-        
+        height: 120px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-        margin: 2rem;
-        
-        img {
-            width: 350px;
-            height:300px;
-            object-fit: cover;
-            border-radius: 5px;
-            
-        };
-        p{
-            color: $primary-bg;
-        }
-        &--data{
-            width: 100%;  
+        justify-content:space-around;
+        align-items: flex-start;
+        justify-self: start;
+        ul {
             display: flex;
-            justify-content: space-between;
-            align-items:center;
-            margin: 1rem 0;
-            :nth-child(1){
-                flex-shrink: 0;
+        }
+        span {
+             border: 1px solid #C4C4C4;
+            border-radius:11px;
+            padding: 3px;
+            margin:0 4px 0 0; 
+        }
+    }
+    &--filter {
+        width: 100%;
+        display: none;
+                 @include media-min ("tablet-up-720") {
+                display: block;
             }
+    }
+    &--list {
+        width: 100%;
+        margin: 50px 0;
+        &--container {
+            width: 100%;
+                     @include media-min ("tablet-up-720") {
+                width: 30%;
+            }
+            
+            img {
+                width: 100%;
+                height: 140px;
+                object-fit: cover;
+                border-radius: 5px;   
+        
+            
+            }
+        }
+        &--data {
+            width: 100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            p {
+                font-size:16px;
+                color:  $primary-bg;
+            }
+            span {
+                font-size:14px;
+            }
+            i {
+                font-size:12px;
+            }
+        }
+    }
+
+
+
+    &--contact {
+         position: absolute;
+        width: 100%;  
+        bottom: 30px;
+        left:0;
+        right: 0;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+            @include media-min ("tablet-up-720") {
+                position: relative;
+                justify-content:flex-start;
+            }
+    }
+   
+}
+
+// .box__photographer {
+    
+//     &--nav {
+//         // @extend %edged;
+//         // width: 100%;
+//         height: auto;
+//         padding: 1.5rem  0 0 0;
+//         img {
+//             width: 150px;
+//             height: auto; 
+//         }
+//         // @include media-min ("phone-up-320") {
+//         //     max-width: 290px;
+//         // }
+//         // @include media-min ("phone-up-400") {
+//         //     max-width: 400px;
+//         // }
+//         // @include media-min ("tablet-up-768") {
+//         //     max-width: 700px;
+//         // }
+//         //  @include media-min ("laptop-1024") {
+//         //     max-width: 900px;
+//         // }
+        
+
+//     }
+//     &--data {
+//         @extend %edged;
+//         // width: 100%;
+//         // max-width: 270px;
+//         height: 115px;
+//         display: flex;
+//         justify-content:space-between;
+//         align-items:center;
+//         padding: 1.5rem 0 ;
+//         //  @include media-min ("phone-up-320") {
+//         //     max-width: 290px;
+//         // }
+        
+//         //   @include media-min ("phone-up-400") {
+//         //     max-width: 400px;
            
-            :nth-child(2){
-               display: flex;
-               width: 100%;
-            justify-content: flex-end;
-              flex-shrink: 1;
-              margin:0 .5rem
+//         // }
+//         //    @include media-min ("tablet-up-768") {
+//         //     max-width: 700px;   
+//         // }
+//         //   @include media-min ("laptop-1024") {
+//         //     max-width: 900px;
+//         // }
+//         img{ 
+//             width:30%;
+//             height:auto;
+//             object-fit: cover; 
+//             clip-path:ellipse(50% 40%);
+//                @include media-min ("tablet-up-768") {
+//                    width: 15%;
+//                 clip-path:ellipse(50% 40%);      
+                
+//                 }
+ 
+//         }
+//     }
+//     &--text { 
+        
+//         width: 70%;
+//         height: 120px;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         align-items: flex-start;
+        
+//         ul {
+//             width:80%;
+//             overflow: hidden;
+//             display: flex;
+//              span {
+//             border: 1px solid #C4C4C4;
+//             border-radius:11px;
+//             padding: 4px;
+//             margin:0 10px 0 0;
+//             }
+//         }
+//     }
+//     &--filter {
+//         @extend %edged;
+//         width: 100%;
+//         display:flex;
+//         align-items: center;
+//         font-weight: bold;
+//         select {
+//             margin-left:5px;
+//             background-color: $primary-bg;
+//             color: white;
+//             padding:5px;
+//             border-radius:5px;
+//             letter-spacing: 1px;
+//                 option {
+              
+//                 border-bottom: 1px solid white;
+//             }
+//         };
+        
+//             display:none;
+//             @include media-min ("tablet-up-768") {
+//                 display: flex;
+//                 max-width: 700px;
+//                 padding:0 0 1.5rem 0;
+//             }
+//             @include media-min ("laptop-1024") {
+//             max-width: 900px;
+//         }
+//     }
+//     &--list {
+//         @extend %edged;
+//         width: 100%;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         max-width: 400px;
+//         margin-top: 30px;
+//         // margin: 2rem;
+
+//         //  @include media-min ("phone-up-320") {
+//         //     max-width: 290px;
+//         // }
+//         //     @include media-min ("phone-up-400") {
+//         //     max-width: 400px;
+           
+//         // }
+//         //     @include media-min ("tablet-up") {
+//         //         flex-direction: row;
+//         //         justify-content: flex-start;
+//         //         flex-wrap: wrap;
+//         //     }
+//         img {
+//             width: 100%;
+//             // height:200px;
+//             object-fit: cover;
+//             object-position: 50% 30%;
+//             border-radius: 5px;
+//         //      @include media-min ("phone-up-320") {
+//         //     width: 290px;
+//         // }
+//         //     @include media-min ("phone-up-400"){
+//         //          width: 400px;
+//         //     }
+//         //     @include media-min ("tablet-up-768"){
+//         //          width: 330px;
+//         //     }
+            
+//         };
+//         p{
+//             color: $primary-bg;
+//         }
+//         &--data{
+//             width: 100%;  
+//             display: flex;
+//             justify-content: space-between;
+//             align-items:center;
+//             margin: 1rem 0;
+//             :nth-child(1){
+//                 flex-shrink: 0;
+//             }
+//             :nth-child(2){
+//                display: flex;
+//                 width: 100%;
+//                 justify-content: flex-end;
+//                 flex-shrink: 1;
+//                 margin:0 .5rem
 
                 
                
                 
-            }
-            p, span {
+//             }
+//             p, span {
                 
-                font-size:16px;
+//                 font-size:16px;
                 
-            }
+//             }
             
-        }
-    }
-}
-
-
+//         }
+//     }
+//     &--contact { 
+        
+//         @extend %edged;
+//         position: absolute;
+//         width: 100%;
+//         max-width: 400px;
+//         bottom: 30px;
+//         left:0;
+//         right: 0;
+        
+//         display: flex;
+//         justify-content:center;
+//         align-items:center;
+       
+//         @include media-min ("tablet-up-768") {
+//             position: relative;
+//             display: flex;
+//             bottom: 0;
+            
+//         }
+//     }
+// }

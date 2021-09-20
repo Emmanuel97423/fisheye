@@ -4,7 +4,7 @@ html{
 }
 h1{
     font-family: DM Sans;
-    font-size: 36px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 47px;
@@ -21,6 +21,9 @@ h2{
     letter-spacing: 0em;
     text-align: center;
     color: $primary-text;
+    @include media-min ("desktop-1024") {
+        font-size: 25px;
+    }
 }
 h3 {
     font-family: DM Sans;
