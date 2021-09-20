@@ -73,6 +73,9 @@
         width: 100%;
         img {
             width: 50%;
+            @include media-min("tablet-up-720") {
+                width:20%;
+            }
         }
     }
 
