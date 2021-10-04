@@ -114,7 +114,7 @@
                 <mxCell id="o4WJppkfIDcXY8fVfL-h-14" value="&amp;nbsp;Systèm Like&amp;nbsp; sur chaque photo" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="88gLB7WfESl6rlELxIYm-1">
                     <mxGeometry x="195" y="670" width="240" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="lEyg8M4K8dlohxCe28CF-0" value="frame" style="shape=umlFrame;whiteSpace=wrap;html=1;" vertex="1" parent="88gLB7WfESl6rlELxIYm-1">
+                <mxCell id="lEyg8M4K8dlohxCe28CF-0" value="Photograph app" style="shape=umlFrame;whiteSpace=wrap;html=1;" vertex="1" parent="88gLB7WfESl6rlELxIYm-1">
                     <mxGeometry x="97" y="10" width="730" height="860" as="geometry"/>
                 </mxCell>
             </root>

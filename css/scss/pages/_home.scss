@@ -1,36 +1,38 @@
 .box {
-    width: 90%;
+    
     display: flex;
     flex-direction: column;
     justify-content:space-around;
     align-items:center;
-    margin: 20px auto;
+    margin: 20px 20px;
     // background-color:red;
 
   
     &__list {
-        width: 100%;
+        // width: 100%;
+        display: flex;
           @include media-min ("desktop-1024") {
              margin: 50px auto;
     }
         &--card {
-            flex:20%;
-            width: 100%;
+         
+           
             display: flex;
             flex-direction: column;
             justify-content:center;
             align-items:center;
-            @include media-min ("tablet-up-720") {
-                width: 30%;
-            }
+          
             img {
                 width: 60%;
                 clip-path:ellipse(50% 40%);
                 object-fit: cover;
-                 @include media-min("desktop-1024") {
-                width: 50%;
-               
+                  @include media-min ("tablet-up-720") {
+                 width: 17%;
             }
+            //      @include media-min("desktop-1024") {
+            //     width: 33%;
+               
+            // }
           
             }
         }
@@ -44,21 +46,18 @@
         }
         &--tag {
             flex:20%;
-            width: 100%;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items:center;
             margin-top: 10px;
                 span {
                 border: 1px solid #C4C4C4;
                 border-radius:11px;
                 padding: 3px;
-                // margin:0 4px 0 0;
+                margin:0 4px;
             
                 }
-                @include media-min ("desktop-1024") {
-                     width: 90%;
-                }
+               
         }
     }
 }

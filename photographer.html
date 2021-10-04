@@ -46,7 +46,7 @@
     <section class="box__photographer--list">
         
        <div class="box__photographer--list--container">
-            <img src="/img/Mimi/Animals_Rainbow.jpg" alt="Oiseau-arc-en-ciel">
+            <div class="box__photographer--list--img"><img src="/img/Mimi/Animals_Rainbow.jpg" alt="Oiseau-arc-en-ciel" onclick="openModal();currentSlide(1)" class="hover-shadow"></div>
         
         <div class="box__photographer--list--data">
             <p>Arc-en-cie</p>
@@ -58,6 +58,60 @@
        </div>
 
     </section>
+
+    <!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="/img/Mimi/Animals_Rainbow.jpg" >
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="/img/Mimi/Event_BenevidesWedding.jpg" >
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="/img/Mimi/Portrait_Wednesday.jpg" >
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="/img/Mimi/Animals_Rainbow.jpg" >
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <!-- <div class="column">
+      <img class="demo" src="/img/Mimi/Animals_Rainbow.jpg" onclick="currentSlide(1)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="/img/Mimi/Animals_Rainbow.jpg" onclick="currentSlide(2)" alt="Snow">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="/img/Mimi/Animals_Rainbow.jpg" onclick="currentSlide(3)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="/img/Mimi/Animals_Rainbow.jpg" onclick="currentSlide(4)" alt="Lights">
+    </div> -->
+  </div>
+</div>
+
     <footer class="footer">
         <div class="footer__box">
              <p>120 009</p>
@@ -72,7 +126,7 @@
 </div>
 
 
-
+<script  src='utils/lightBoxClass.js'></script>
     
 </body>
 </html>
