@@ -1,9 +1,24 @@
 // import  photographerModel from './model/photographerModel'
-import { FetchData, Photographer } from './controllers/dataController.js'
+// import { Photographers, Medias } from './model/FetchDatas.js'
+import { Photographers } from './model/Photographers.js'
+import { Medias } from './model/Medias.js'
+import { View } from './view/homeCard.js'
 
 
-const data = './model/data.json'
+const url = './model/data.json'
 
 
-const dataPhotographer = new FetchData(data)
-console.log('dataPhotographer:', dataPhotographer.data)
+const photographer = new Photographers(url)
+
+// const media = new Medias(url)
+
+// photographer.data
+
+const homeCard = new View(photographer.data)
+console.log('homeCard:', homeCard)
+
+
+
+
+
+
