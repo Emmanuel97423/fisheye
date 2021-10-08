@@ -17,9 +17,9 @@
                 height: 150px;
             }
         img {
-            clip-path:ellipse(50% 35%);
+            clip-path:circle(40%);
             object-fit: cover;
-            width: 30%;
+            width: 35%;
             @include media-min ("tablet-up-720") {
                 width: 20%;
             }
@@ -34,6 +34,9 @@
         justify-content:space-around;
         align-items: flex-start;
         justify-self: start;
+        h2 {
+            font-size: 25px;
+        }
         ul {
             display: flex;
         }
@@ -64,8 +67,12 @@
     &--list {
         // width: 100%;
         margin: 50px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // align-items: center;
         &--container {
-            // width: 100%;
+           margin: 0 0 1.5rem 0;
                      @include media-min ("tablet-up-720") {
                 width: 30%;
                 
@@ -78,6 +85,7 @@
                 border-radius: 5px;
                 object-position:0 20% ;
                 cursor: pointer;
+                margin: 0 0 1rem 0;
                 
                 
                

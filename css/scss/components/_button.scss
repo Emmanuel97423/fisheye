@@ -46,5 +46,6 @@
    @include btn
 }
 .btn-xl {
-    @include btn-xl
+    @include btn-xl;
+    position:fixed;
 }

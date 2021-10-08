@@ -1,10 +1,10 @@
-import { FetchDatas } from "./FetchDatas.js";
+// import { FetchDatas } from "./FetchDatas.js";
 
-export class Medias extends FetchDatas {
+// export class Medias extends FetchDatas {
 
-    get data() {
-        super.getMedias;
+//     get data() {
+//         super.getMedias;
 
-    }
+//     }
 
-}
+// }

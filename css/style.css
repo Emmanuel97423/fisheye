@@ -51,6 +51,10 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
   font-family: "DM sans";
 }
@@ -243,6 +247,9 @@ p {
 }
 .box__list {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 50px auto;
 }
 @media screen and (min-width: 1024px) {
   .box__list {
@@ -250,14 +257,16 @@ p {
   }
 }
 .box__list--card {
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .box__list--card img {
-  width: 60%;
-  clip-path: ellipse(50% 40%);
+  width: 100%;
+  height: 280px;
+  clip-path: circle(40%);
   object-fit: cover;
 }
 @media screen and (min-width: 720px) {
@@ -273,7 +282,6 @@ p {
   justify-content: space-around;
 }
 .box__list--tag {
-  flex: 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -304,9 +312,9 @@ p {
   }
 }
 .box__photographer--data img {
-  clip-path: ellipse(50% 35%);
+  clip-path: circle(40%);
   object-fit: cover;
-  width: 30%;
+  width: 35%;
 }
 @media screen and (min-width: 720px) {
   .box__photographer--data img {
@@ -320,6 +328,9 @@ p {
   justify-content: space-around;
   align-items: flex-start;
   justify-self: start;
+}
+.box__photographer--text h2 {
+  font-size: 25px;
 }
 .box__photographer--text ul {
   display: flex;
@@ -349,6 +360,12 @@ p {
 }
 .box__photographer--list {
   margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box__photographer--list--container {
+  margin: 0 0 1.5rem 0;
 }
 @media screen and (min-width: 720px) {
   .box__photographer--list--container {
@@ -362,6 +379,7 @@ p {
   border-radius: 5px;
   object-position: 0 20%;
   cursor: pointer;
+  margin: 0 0 1rem 0;
 }
 .box__photographer--list--data {
   display: flex;
@@ -428,6 +446,7 @@ p {
   padding: 0 10px;
   height: 40px;
   font-size: 14px;
+  position: fixed;
 }
 
 .row > .column {
