@@ -12,8 +12,8 @@ const photoManager = new PhotographersManager()
 photoManager.getDataById(id).then((result) => {
 
     const homeCardView = new View();
-
     homeCardView.displayPhotographerById(result)
+
     photographerName = result[0].name.split(" ")[0]
 
 }).catch((error) => { console.error(error) })
@@ -26,6 +26,7 @@ mediaManager.getDataById(id).then((result) => {
     const mediaView = new View();
 
     mediaView.displayContentById(result, photographerName)
+    mediaView.displayVideoById(result, photographerName)
 
 }).catch((error) => {
     console.log(error)

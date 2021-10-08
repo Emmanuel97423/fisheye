@@ -16,10 +16,10 @@ class Photographers {
             let data = await result.json();
 
             let photographers = data.photographers.map((photographer) => {
-                const { id, name, city, country, tags, tagline, portrait, } = photographer;
+                const { id, name, city, country, tags, tagline, portrait, price } = photographer;
                 // console.log('photographer:', photographer)
 
-                return { id, name, city, country, tags, tagline, portrait, };
+                return { id, name, city, country, tags, tagline, portrait, price };
             });
             // console.log('photographers:', photographers)
             return photographers;

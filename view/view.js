@@ -7,7 +7,20 @@ export class View {
         const photographersListDOM = document.querySelector("#homeCard");
         let result = "";
 
+
         for (const photographer of photographers) {
+
+
+            //Display tags array
+            let tagsTemplate = ""
+            let tags = photographer.tags
+
+            for (const tag of tags) {
+
+                tagsTemplate += `<span>#${tag}</span>`
+
+
+            }
 
 
             result += `
@@ -21,7 +34,7 @@ export class View {
                <span class="box__list--price">${photographer.price}€/jour</span>
             </div>
             <div class="box__list--tag">
-                <span>#${this.tags}</span>
+                ${tagsTemplate}
                 
 
             </div>
@@ -38,6 +51,14 @@ export class View {
 
         const photographerDOM = document.querySelector("#photographer");
         let result = "";
+        let tagsTemplate = ""
+        let tags = photographer[0].tags
+        for (const tag of tags) {
+
+            tagsTemplate += ` <li><span>#${tag}</span></li>`
+
+        }
+
 
         result = `
             <div class="box__photographer--text">
@@ -45,10 +66,8 @@ export class View {
             <h3>${photographer[0].city}, ${photographer[0].country}</h3>
             <p>${photographer[0].tagline}</p>
             <ul id ='tagsList'>
-                <li><span>#Portrait</span></li>
-                <li><span>#Event</span></li>
-                <li><span>#Travel</span></li>
-                <!-- <li><span>#Gastronomy</span></li> -->
+            
+                ${tagsTemplate}
 
             </ul>
         </div>
@@ -62,12 +81,7 @@ export class View {
     }
     //List content by photographer
     displayContentById(medias, name) {
-
-
         const contentDOM = this.getElement("#content__list")
-
-
-
 
         let contentTemplate = ""
 
@@ -75,28 +89,27 @@ export class View {
 
         for (const media of medias) {
 
-
             if (media.image) {
 
                 contentTemplate += `
 
-                       <div class="box__photographer--list--container">
-            <div class="box__photographer--list--img"><img src="/img/${name}/${media.image}" alt="${media.title}" onclick="openModal();currentSlide(1)" class="hover-shadow"></div>
+                <div class="box__photographer--list--container">
+                      <div class="box__photographer--list--img"><img src="/img/${name}/${media.image}" alt="${media.title}" onclick="openModal();currentSlide(1)" class="hover-shadow"></div>
 
-        <div class="box__photographer--list--data">
-            <p>${media.title}</p>
-            <div>
-                <span>${media.likes}</span>
-            <i class="fas fa-heart"></i>
+                    <div class="box__photographer--list--data">
+                        <p>${media.title}</p>
+                        <div>
+                            <span>${media.likes}</span>
+                        <i class="fas fa-heart"></i>
+                        </div>
+                </div>
             </div>
-        </div>
-       </div>
             `
 
 
             }
             contentDOM.innerHTML = contentTemplate
-
+            // contentDOM.innerHTML += videoTemplate
 
         }
 
@@ -107,7 +120,57 @@ export class View {
 
 
     }
+    displayVideoById(medias, name) {
+        // console.log('medias:', medias)
+        const contentDOM = this.getElement("#content__list")
+        let videoTemplate = "";
 
+
+        for (const media of medias) {
+
+            if (media.video) {
+                console.log('media:', media)
+
+                videoTemplate += `
+
+                <div class="box__photographer--list--container">
+                        <div class="box__photographer--list--img">
+                        
+                            <video controls width=100% >
+                            <source src="/img/${name}/${media.video}"
+                                    type="video/mp4">
+                            Sorry, your browser doesn't support embedded videos.
+                        </video>
+                        
+                        </div>
+                <div class="box__photographer--list--data">
+                        <p>${media.title}</p>
+                        <div>
+                            <span>${media.likes}</span>
+                        <i class="fas fa-heart"></i>
+                        </div>
+                </div>
+
+                </div>
+         
+
+
+
+
+
+         
+                
+                `
+            }
+
+        }
+        contentDOM.innerHTML += videoTemplate
+
+
+
+
+
+    }
     // displayTagList(photographer) {
     //     const tagListDOM = this.getElement("#tagsList")
 
