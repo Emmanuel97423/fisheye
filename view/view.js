@@ -71,7 +71,7 @@ export class View {
 
             </ul>
         </div>
-        <div class="box__photographer--contact"><button class="btn btn-xl" type="button">Contactez-moi</button></div>
+        <div class="box__photographer--contact"><button class="btn btn-xl" type="button" onClick="openModalForm()" >Contactez-moi</button></div>
         <img src="/img/avatar/${photographer[0].portrait}" alt="vignette-du-photographe">
         
         `
@@ -114,11 +114,6 @@ export class View {
         }
 
 
-
-
-
-
-
     }
     displayVideoById(medias, name) {
         // console.log('medias:', medias)
@@ -129,36 +124,30 @@ export class View {
         for (const media of medias) {
 
             if (media.video) {
-                console.log('media:', media)
+
 
                 videoTemplate += `
 
-                <div class="box__photographer--list--container">
+                     <div class="box__photographer--list--container">
                         <div class="box__photographer--list--img">
-                        
-                            <video controls width=100% >
+
+                            <video role="video" controls width=100% >
                             <source src="/img/${name}/${media.video}"
                                     type="video/mp4">
                             Sorry, your browser doesn't support embedded videos.
                         </video>
                         
+                            </div>
+                        <div class="box__photographer--list--data">
+                                <p role="titre-media">${media.title}</p>
+                                <div>
+                                    <role="like-media"span>${media.likes}</span>
+                                <i class="fas fa-heart"></i>
+                                </div>
                         </div>
-                <div class="box__photographer--list--data">
-                        <p>${media.title}</p>
-                        <div>
-                            <span>${media.likes}</span>
-                        <i class="fas fa-heart"></i>
-                        </div>
-                </div>
 
-                </div>
-         
-
-
-
-
-
-         
+                      </div>
+        
                 
                 `
             }
@@ -171,11 +160,6 @@ export class View {
 
 
     }
-    // displayTagList(photographer) {
-    //     const tagListDOM = this.getElement("#tagsList")
-
-    // }
-    // Create an element with an optional CSS class
     createElement(tag, className) {
         const element = document.createElement(tag)
         if (className) element.classList.add(className)

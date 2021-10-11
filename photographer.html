@@ -10,6 +10,8 @@
     <title>Fisheye - Photographer</title>
 </head>
 <body>
+
+
 <div class="box__photographer--container">
           <!-- Navigation bar -->
     <nav class=box__photographer--nav>
@@ -20,13 +22,14 @@
     <section id="photographer" class="box__photographer--data">
         
     </section>
+    <!-- Filter -->
 <div class="box__photographer--filter">
     <label for="select">Trier par:</label>
-    <select name="select" id="select">
-        <option value="">--Trier</option>
-        <option value="Popularité">Popularité</option>
-        <option value="Date">Date</option>
-        <option value="Titre">Titre</option>
+    <select name="select" id="select" onchange="filter(this)">
+        <option >--Trier</option>
+        <option value="popularity">Popularité</option>
+        <option value="date">Date</option>
+        <option value="title">Titre</option>
 
     </select>
     </div>
@@ -92,21 +95,50 @@
   </div>
 </div>
 
+
+
+
+
+
     <footer class="footer">
         <div class="footer__box">
              <p>120 009</p>
             <i class="fas fa-heart"></i>
         </div>
         <div class="footer__box">
-             <p>300€ / jour</p>
-            
+             <p>300€ / jour</p>      
         </div>
-
     </footer>
 </div>
+  <div class="formModal" id ="formModal">
+     <span class="close cursor" onclick="closeModalForm()">&times;</span>
+            <form  id ="formModal__content">
+              <div class="formModal__header"><h2>Contactez-moi</h2></div>
+                <div class="formModal__input">
+                <label for="lastname">Prénom: </label>
+                <input type="text" name="lastname" id="lastname" required>
+              </div>
+              <div class="formModal__input">
+                <label for="name">Nom: </label>
+                <input type="text" name="name" id="name" required>
+              </div>
+              <div class="formModal__input">
+                <label for="e-mail">Email: </label>
+                <input type="e-mail" name="e-mail" id="e-mail" required>
+              </div>
+              <div class="formModal__input">
+                <label for="message">Message: </label>
+                <input type="text-area" name="message" id="message" >
+              </div>
+              <button class="btn ">Envoyer</button>
+            </form>
+      </div>
+
 
 <script async type='module' src='controllers/photographer.js'></script>
 <script async type='module' src='utils/lightboxClass.js'></script>
+<script src='utils/modal.js'></script>
+<!-- <script  async  type ='module' src='utils/filters.js'></script> -->
 <!-- <script defer  src='utils/lightbox.js'></script> -->
 
     

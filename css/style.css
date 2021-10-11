@@ -99,9 +99,9 @@ h3 {
 
 span {
   font-family: DM Sans;
-  font-size: 12px;
+  font-size: 10px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 16px;
   letter-spacing: 0em;
   text-align: center;
@@ -254,6 +254,8 @@ p {
 @media screen and (min-width: 1024px) {
   .box__list {
     margin: 50px auto;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 .box__list--card {
@@ -263,6 +265,11 @@ p {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 720px) {
+  .box__list--card {
+    width: 30%;
+  }
+}
 .box__list--card img {
   width: 100%;
   height: 280px;
@@ -271,7 +278,7 @@ p {
 }
 @media screen and (min-width: 720px) {
   .box__list--card img {
-    width: 17%;
+    width: 100%;
   }
 }
 .box__list--text {
@@ -304,7 +311,6 @@ p {
 .box__photographer--data {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 @media screen and (min-width: 720px) {
   .box__photographer--data {
@@ -314,7 +320,7 @@ p {
 .box__photographer--data img {
   clip-path: circle(40%);
   object-fit: cover;
-  width: 35%;
+  width: 38%;
 }
 @media screen and (min-width: 720px) {
   .box__photographer--data img {
@@ -334,6 +340,8 @@ p {
 }
 .box__photographer--text ul {
   display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 0 0;
 }
 .box__photographer--text span {
   border: 1px solid #C4C4C4;
@@ -363,6 +371,12 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media screen and (min-width: 720px) {
+  .box__photographer--list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 .box__photographer--list--container {
   margin: 0 0 1.5rem 0;
@@ -447,6 +461,11 @@ p {
   height: 40px;
   font-size: 14px;
   position: fixed;
+}
+@media screen and (min-width: 720px) {
+  .btn-xl {
+    position: relative;
+  }
 }
 
 .row > .column {
@@ -591,6 +610,63 @@ img.hover-shadow {
 
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.formModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #D3573C;
+  text-align: center;
+  transition: all 0.5;
+}
+@media screen and (min-width: 1024px) {
+  .formModal {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+}
+.formModal form {
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #D3573C;
+}
+@media screen and (min-width: 1024px) {
+  .formModal form {
+    width: 40%;
+    margin: 70px auto;
+  }
+}
+.formModal__header h2 {
+  color: black;
+}
+.formModal__input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  color: white;
+  margin: 1rem 0 0 0;
+}
+.formModal__input input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+#message {
+  padding: 4rem 0.5rem;
+  margin: 0 0 1rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,59 @@
+.formModal {
+    display: none;
+  position: fixed;
+  z-index: 1;
+//   padding-top: 20vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: $secondary-bg;
+  text-align: center;
+  transition: all 0.5;
+          @include media-min ("desktop-1024") {
+               background-color: rgba(0, 0, 0, 0.95);
+             
+    }
+
+  form {
+      width: 100%;
+      height: 50%;
+    margin: 0 auto;
+    padding: 5rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content:space-around;
+      align-items:center;
+      background-color:$secondary-bg;
+        @include media-min ("desktop-1024") {
+             width: 40%;
+              margin: 70px auto;
+    }
+  }
+
+  &__header {
+    h2 {
+        color: black;
+    }
+  }
+  &__input{
+   
+      display: flex;
+      flex-direction: column;
+      justify-content:space-around;
+      align-items:flex-start;
+      color:white;
+      margin: 1rem 0 0 0;
+      input {
+            width: 100%;
+             padding:.5rem;
+             border-radius: 5px;
+      }
+
+  }
+}
+#message{
+    padding:4rem .5rem ;
+    margin: 0 0 1rem 0;
+}
