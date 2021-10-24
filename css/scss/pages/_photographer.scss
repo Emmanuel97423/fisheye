@@ -12,15 +12,15 @@
     &--data {
         display: flex;
         justify-content:space-between;
-        // align-items:center;
+        align-items:center;
         
                 @include media-min ("tablet-up-720") {
                 height: 150px;
             }
         img {
-            clip-path:circle(40%);
+            clip-path:circle(38%);
             object-fit: cover;
-            width: 38%;
+            width: 35%;
             @include media-min ("tablet-up-720") {
                 width: 20%;
             }
@@ -29,12 +29,12 @@
     }
     &--text {
         
-        height: 120px;
+        height: 115px;
         display: flex;
         flex-direction: column;
-        justify-content:space-around;
+        justify-content:center;
         align-items: flex-start;
-        justify-self: start;
+        
         h2 {
             font-size: 25px;
         }
@@ -93,9 +93,10 @@
                 object-position:0 20% ;
                 cursor: pointer;
                 margin: 0 0 1rem 0;
-                
-                
-               
+    
+            }
+            video{
+                 border-radius: 5px;
             }
         }
 
@@ -142,6 +143,14 @@
             }
     }
    
+}
+.likesBox{
+    
+    display: flex;
+    
+}
+.fa-heart {
+    margin: 0 0 0 .5rem;
 }
 
 // .box__photographer {

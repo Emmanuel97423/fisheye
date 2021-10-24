@@ -7,9 +7,7 @@ export class View {
         const photographersListDOM = document.querySelector("#homeCard");
         let result = "";
 
-
         for (const photographer of photographers) {
-
 
             //Display tags array
             let tagsTemplate = ""
@@ -19,13 +17,12 @@ export class View {
 
                 tagsTemplate += `<span>#${tag}</span>`
 
-
             }
-
 
             result += `
           <article class="box__list--card">
-            <img class="portrait" src="/img/avatar/${photographer.portrait}" alt="Vignette du photographe ${photographer.name}">
+            
+            <a href="photographer.html?id=${photographer.id}"><img class="portrait" src="/img/avatar/${photographer.portrait}" alt="Vignette du photographe ${photographer.name}"></a>
         <div class="box__list--text">
 
                <a href="photographer.html?id=${photographer.id}"><h2>${photographer.name}</h2></a>
@@ -41,7 +38,6 @@ export class View {
         </article>
         `
 
-
         }
 
         photographersListDOM.innerHTML = result;
@@ -55,7 +51,7 @@ export class View {
         let tags = photographer[0].tags
         for (const tag of tags) {
 
-            tagsTemplate += ` <li><span>#${tag}</span></li>`
+            tagsTemplate += ` <li><span class="tag">#${tag}</span></li>`
 
         }
 
@@ -98,8 +94,8 @@ export class View {
 
                     <div class="box__photographer--list--data">
                         <p>${media.title}</p>
-                        <div>
-                            <span>${media.likes}</span>
+                        <div class=likesBox>
+                            <p class="likes" aria-label="likes">${media.likes}</p>
                         <i class="fas fa-heart"></i>
                         </div>
                 </div>
@@ -107,6 +103,31 @@ export class View {
             `
 
 
+            } else if (media.video) {
+                contentTemplate += `
+
+                     <div class="box__photographer--list--container">
+                        <div class="box__photographer--list--img">
+
+                            <video role="video" controls width=100% >
+                            <source src="/img/${name}/${media.video}"
+                                    type="video/mp4">
+                            Sorry, your browser doesn't support embedded videos.
+                        </video>
+                        
+                            </div>
+                        <div class="box__photographer--list--data">
+                                <p role="titre-media">${media.title}</p>
+                                <div class=likesBox>
+                                    <p class="likes" role="like-media">${media.likes}</p>
+                                <i class="fas fa-heart"></i>
+                                </div>
+                        </div>
+
+                      </div>
+        
+                
+                `
             }
             contentDOM.innerHTML = contentTemplate
             // contentDOM.innerHTML += videoTemplate
@@ -166,7 +187,6 @@ export class View {
 
         return element
     }
-
     // Retrieve an element from the DOM
     getElement(selector) {
         const element = document.querySelector(selector)
@@ -175,3 +195,4 @@ export class View {
     }
 
 }
+

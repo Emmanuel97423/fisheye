@@ -25,7 +25,7 @@
     <!-- Filter -->
 <div class="box__photographer--filter">
     <label for="select">Trier par:</label>
-    <select name="select" id="select" onchange="filter(this)">
+    <select name="select" id="select" aria-label="listbox">
         <option >--Trier</option>
         <option value="popularity">Popularité</option>
         <option value="date">Date</option>
@@ -134,12 +134,15 @@
             </form>
       </div>
 
-
+<script  async  type ='module' src='utils/filter.js'></script>
 <script async type='module' src='controllers/photographer.js'></script>
 <script async type='module' src='utils/lightboxClass.js'></script>
 <script src='utils/modal.js'></script>
-<!-- <script  async  type ='module' src='utils/filters.js'></script> -->
-<!-- <script defer  src='utils/lightbox.js'></script> -->
+ <script  src='utils/links.js'></script>
+ <!-- <script async type='module' src='script.js'></script> -->
+ <script async type='module' src='utils/likes.js'></script>
+
+<script async  src='utils/lightbox.js'></script>
 
     
 </body>
