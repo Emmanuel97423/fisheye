@@ -397,6 +397,8 @@ p {
 }
 .box__photographer--list--container video {
   border-radius: 5px;
+  width: 100%;
+  height: 190px;
 }
 .box__photographer--list--data {
   display: flex;

@@ -152,7 +152,7 @@ export class View {
                      <div class="box__photographer--list--container">
                         <div class="box__photographer--list--img">
 
-                            <video role="video" controls width=100% >
+                            <video role="video" muted  >
                             <source src="/img/${name}/${media.video}"
                                     type="video/mp4">
                             Sorry, your browser doesn't support embedded videos.
