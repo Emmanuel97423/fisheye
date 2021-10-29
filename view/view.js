@@ -109,7 +109,7 @@ export class View {
                      <div class="box__photographer--list--container">
                         <div class="box__photographer--list--img">
 
-                            <video role="video" controls width=100% >
+                            <video  role="video" muted  >
                             <source src="/img/${name}/${media.video}"
                                     type="video/mp4">
                             Sorry, your browser doesn't support embedded videos.
@@ -119,7 +119,7 @@ export class View {
                         <div class="box__photographer--list--data">
                                 <p role="titre-media">${media.title}</p>
                                 <div class=likesBox>
-                                    <p class="likes" role="like-media">${media.likes}</p>
+                                    <p class="likes" aria-label="likes">${media.likes}</p>
                                 <i class="fas fa-heart"></i>
                                 </div>
                         </div>
@@ -136,51 +136,51 @@ export class View {
 
 
     }
-    displayVideoById(medias, name) {
-        // console.log('medias:', medias)
-        const contentDOM = this.getElement("#content__list")
-        let videoTemplate = "";
+    // displayVideoById(medias, name) {
+    //     // console.log('medias:', medias)
+    //     const contentDOM = this.getElement("#content__list")
+    //     let videoTemplate = "";
 
 
-        for (const media of medias) {
+    //     for (const media of medias) {
 
-            if (media.video) {
-
-
-                videoTemplate += `
-
-                     <div class="box__photographer--list--container">
-                        <div class="box__photographer--list--img">
-
-                            <video role="video" muted  >
-                            <source src="/img/${name}/${media.video}"
-                                    type="video/mp4">
-                            Sorry, your browser doesn't support embedded videos.
-                        </video>
-                        
-                            </div>
-                        <div class="box__photographer--list--data">
-                                <p role="titre-media">${media.title}</p>
-                                <div>
-                                    <role="like-media"span>${media.likes}</span>
-                                <i class="fas fa-heart"></i>
-                                </div>
-                        </div>
-
-                      </div>
-        
-                
-                `
-            }
-
-        }
-        contentDOM.innerHTML += videoTemplate
+    //         if (media.video) {
 
 
+    //             videoTemplate += `
+
+    //                  <div class="box__photographer--list--container">
+    //                     <div class="box__photographer--list--img">
+
+    //                         <video role="video" muted  >
+    //                         <source src="/img/${name}/${media.video}"
+    //                                 type="video/mp4">
+    //                         Sorry, your browser doesn't support embedded videos.
+    //                     </video>
+
+    //                         </div>
+    //                     <div class="box__photographer--list--data">
+    //                             <p role="titre-media">${media.title}</p>
+    //                             <div>
+    //                                 <role="like-media"span>${media.likes}</span>
+    //                             <i class="fas fa-heart"></i>
+    //                             </div>
+    //                     </div>
+
+    //                   </div>
+
+
+    //             `
+    //         }
+
+    //     }
+    //     contentDOM.innerHTML += videoTemplate
 
 
 
-    }
+
+
+    // }
     createElement(tag, className) {
         const element = document.createElement(tag)
         if (className) element.classList.add(className)

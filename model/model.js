@@ -197,39 +197,39 @@ class Medias {
         }
     }
 
-    async getLikesMethod(id) {
-        try {
-            //requête FETCH
-            let result = await fetch('./model/data.json', {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
-            let data = await result.json();
+    // async getLikesMethod(id) {
+    //     try {
+    //         //requête FETCH
+    //         let result = await fetch('./model/data.json', {
+    //             method: "GET",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //         })
+    //         let data = await result.json();
 
-            // let medias = data.media
+    //         // let medias = data.media
 
-            let media = await data.media.filter(item => item.id == 2523434634)
+    //         let media = await data.media.filter(item => item.id == 2523434634)
 
-            // for (const media of medias) {
-            //     // console.log('media like:', media.likes)
-            //     // console.log('media id:', media.id)
-            //     const likeBtn = document.querySelector('.fa-heart')
-            //     console.log('likeBtn:', likeBtn)
-            //     likeBtn.addEventListener('click', (e) => {
-            //         console.log('click to')
-            //     })
+    //         // for (const media of medias) {
+    //         //     // console.log('media like:', media.likes)
+    //         //     // console.log('media id:', media.id)
+    //         //     const likeBtn = document.querySelector('.fa-heart')
+    //         //     console.log('likeBtn:', likeBtn)
+    //         //     likeBtn.addEventListener('click', (e) => {
+    //         //         console.log('click to')
+    //         //     })
 
-            // }
+    //         // }
 
 
 
-            return media;
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    //         return media;
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
 
 }
 

@@ -54,36 +54,71 @@ select.addEventListener('change', (e) => {
 
 //Likes
 
-
-
-
 setTimeout(() => {
 
 
     try {
-        let likeBtn = document.querySelectorAll('.likesBox')
+        // let likeBtn = document.querySelectorAll('.likesBox')
+        let likeBtn = document.querySelectorAll('.likes')
 
+        let heartBtn = document.querySelectorAll('.fa-heart')
 
-        likeBtn.forEach(like => {
-
-
-            like.addEventListener('click', (e) => {
-
+        let value = ''
+        likeBtn.forEach(btn => {
+            let nextNode = btn.nextElementSibling
+            nextNode.addEventListener('click', (e) => {
                 e.preventDefault();
-                let template = `
-                            <p class="likes" aria-label="likes">${like.textContent++}</p>
-                        <i class="fas fa-heart"></i>
-                        `
-                // let count =
-                // console.log('count:', count)
-                likeBtn.innerHTML += template
-
-
-                // let parseLikes = parseInt(count)
-                // console.log('parseLikes:', parseLikes++)
+                btn.innerText++
 
             })
+
+
+
+
+
         })
+
+
+
+
+
+        // const likesInc = () => {
+        //     likeBtn.forEach(like => {
+        //         like.addEventListener('click', (e) => {
+        //             e.preventDefault();
+        //             let template = `
+        //                     ${like.textContent++}
+        //                 `
+        //             likes.innerHTML += template
+
+        //         })
+        //     })
+
+        //     heartBtn.forEach(btn => {
+
+        //         btn.addEventListener('click', (e) => {
+
+        //             e.preventDefault();
+        //             console.log('Inc')
+
+        //         })
+        //     })
+        // }
+        // likesInc()
+
+        // try {
+        //     heartBtn.forEach(btn => {
+
+        //         btn.addEventListener('click', (e) => {
+        //             likesInc()
+        //             e.preventDefault();
+        //             console.log('Inc')
+
+        //         })
+        //     })
+        // } catch (error) {
+        //     console.log(error)
+        // }
 
     } catch (error) {
         console.log(error)
@@ -126,7 +161,7 @@ const storage = localStorage
 
 setTimeout(() => {
     const tags = document.querySelectorAll('.tag')
-    console.log('tags:', tags)
+
     tags.forEach(tag => {
         tag.addEventListener('click', (e) => {
             e.preventDefault();
