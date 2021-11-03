@@ -129,7 +129,7 @@ class Medias {
 
 
             medias.sort((a, b) => b.likes - a.likes)
-            console.log('medias:', medias)
+
 
 
             // media.sort()

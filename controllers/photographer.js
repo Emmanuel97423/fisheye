@@ -8,10 +8,14 @@ const id = urlParams.get("id");
 //Photographe name for media link
 let photographerName = ""
 let medias = {}
+
+let price = ""
+
 //Photographer Manager
 const photoManager = new PhotographersManager()
 photoManager.getDataById(id).then((result) => {
 
+    price = result[0].price
     const homeCardView = new View();
     homeCardView.displayPhotographerById(result)
 
@@ -27,6 +31,10 @@ mediaManager.getDataById(id).then((result) => {
     const mediaView = new View();
 
     mediaView.displayContentById(result, photographerName)
+    //display all likes
+    mediaView.displayAllLike(result, price)
+    //display price
+    likesInc()
     // mediaView.displayVideoById(result, photographerName)
 
 }).catch((error) => {
@@ -42,122 +50,55 @@ select.addEventListener('change', (e) => {
     if (e.target.value == 'popularity') {
         mediaManager.getDataByLikes(id).then((result) => {
             mediaView.displayContentById(result, photographerName)
+            likesInc()
             // mediaView.displayVideoById(result, photographerName)
         }).catch((error) => { console.log(error) })
     } else if (e.target.value == 'date') {
-        mediaManager.getDataByDate(id).then((result) => { mediaView.displayContentById(result, photographerName) }).catch((error) => { console.log(error) })
+        mediaManager.getDataByDate(id).then((result) => {
+            mediaView.displayContentById(result, photographerName)
+            likesInc()
+        }).catch((error) => { console.log(error) })
+
     } else if (e.target.value == 'title') {
-        mediaManager.getDataByTitle(id).then((result) => { mediaView.displayContentById(result, photographerName) }).catch((error) => { console.log(error) })
+        mediaManager.getDataByTitle(id).then((result) => {
+            mediaView.displayContentById(result, photographerName)
+            likesInc()
+        }).catch((error) => { console.log(error) })
+
     }
 
 })
 
-//Likes
+//Likes System
 
-setTimeout(() => {
-
+const likesInc = () => {
 
     try {
-        // let likeBtn = document.querySelectorAll('.likesBox')
+
         let likeBtn = document.querySelectorAll('.likes')
 
-        let heartBtn = document.querySelectorAll('.fa-heart')
-
-        let value = ''
         likeBtn.forEach(btn => {
             let nextNode = btn.nextElementSibling
             nextNode.addEventListener('click', (e) => {
                 e.preventDefault();
                 btn.innerText++
-
             })
-
-
-
-
-
         })
-
-
-
-
-
-        // const likesInc = () => {
-        //     likeBtn.forEach(like => {
-        //         like.addEventListener('click', (e) => {
-        //             e.preventDefault();
-        //             let template = `
-        //                     ${like.textContent++}
-        //                 `
-        //             likes.innerHTML += template
-
-        //         })
-        //     })
-
-        //     heartBtn.forEach(btn => {
-
-        //         btn.addEventListener('click', (e) => {
-
-        //             e.preventDefault();
-        //             console.log('Inc')
-
-        //         })
-        //     })
-        // }
-        // likesInc()
-
-        // try {
-        //     heartBtn.forEach(btn => {
-
-        //         btn.addEventListener('click', (e) => {
-        //             likesInc()
-        //             e.preventDefault();
-        //             console.log('Inc')
-
-        //         })
-        //     })
-        // } catch (error) {
-        //     console.log(error)
-        // }
-
     } catch (error) {
         console.log(error)
     }
 
-}, 3000)
+
+}
+likesInc()
+
+//Total like
 
 
-// for (const like of likeBtn) {
-//     like.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         const count = document.querySelectorAll('.likes')
-//         console.log('count:', count)
-//         console.log('likeBtn:', likeBtn)
-//     })
-// }
+// const likes = new MediasManager()
 
-
-const likes = new MediasManager()
-// likes.getLikes().then((result) => console.log(result)).catch((error) => { console.log(error) })
-
-
-//Filter by tags Home
-
-// const tags = new Promise((resolve, reject) => {
-//     const element = document.querySelectorAll('tag')
-//     setTimeout(() => {
-
-//         resolve(element)
-//     }, 3000)
-
-// }).then((result) => {
-//     console.log(result)
-// }).catch((err) => { console.log(err) });
-
-// console.log('tags:', tags)
 
 const storage = localStorage
-
 
 setTimeout(() => {
     const tags = document.querySelectorAll('.tag')

@@ -49,6 +49,7 @@ export class View {
         let result = "";
         let tagsTemplate = ""
         let tags = photographer[0].tags
+
         for (const tag of tags) {
 
             tagsTemplate += ` <li><span class="tag">#${tag}</span></li>`
@@ -78,12 +79,17 @@ export class View {
     //List content by photographer
     displayContentById(medias, name) {
         const contentDOM = this.getElement("#content__list")
+        const modalDOM = this.getElement('#modal__content')
+
+
 
         let contentTemplate = ""
+        let modalTemplate = ""
 
 
 
         for (const media of medias) {
+
 
             if (media.image) {
 
@@ -101,6 +107,14 @@ export class View {
                 </div>
             </div>
             `
+
+                modalTemplate += `
+                 <div class="mySlides">
+                    <!--<div class="numbertext">1 / 4</div>-->
+                    <img src="/img/${name}/${media.image}" >
+                </div>
+                
+                `
 
 
             } else if (media.video) {
@@ -130,57 +144,44 @@ export class View {
                 `
             }
             contentDOM.innerHTML = contentTemplate
+            modalDOM.innerHTML = modalTemplate
+
+
             // contentDOM.innerHTML += videoTemplate
 
         }
 
 
     }
-    // displayVideoById(medias, name) {
-    //     // console.log('medias:', medias)
-    //     const contentDOM = this.getElement("#content__list")
-    //     let videoTemplate = "";
-
-
-    //     for (const media of medias) {
-
-    //         if (media.video) {
-
-
-    //             videoTemplate += `
-
-    //                  <div class="box__photographer--list--container">
-    //                     <div class="box__photographer--list--img">
-
-    //                         <video role="video" muted  >
-    //                         <source src="/img/${name}/${media.video}"
-    //                                 type="video/mp4">
-    //                         Sorry, your browser doesn't support embedded videos.
-    //                     </video>
-
-    //                         </div>
-    //                     <div class="box__photographer--list--data">
-    //                             <p role="titre-media">${media.title}</p>
-    //                             <div>
-    //                                 <role="like-media"span>${media.likes}</span>
-    //                             <i class="fas fa-heart"></i>
-    //                             </div>
-    //                     </div>
-
-    //                   </div>
-
-
-    //             `
-    //         }
-
-    //     }
-    //     contentDOM.innerHTML += videoTemplate
+    //Display all like 
+    displayAllLike(medias, price) {
 
 
 
+        const likeDOM = this.getElement('#total__likes')
+        const reducer = (previousValue, currentValue) => previousValue + currentValue;
+        let likesArr = []
 
 
-    // }
+        medias.forEach(media => {
+
+            likesArr.push(media.likes)
+
+        })
+        console.log(likesArr.reduce(reducer))
+        const total = likesArr.reduce(reducer)
+
+        let likeTemplate = `
+                         <div class="total__likes--content">
+          <div class="total__likes--heart">${total} <i class="fas fa-heart"></i></div>
+          <div class="total__likes--price">${price}€/jour</div>
+        </div>
+        `
+
+        likeDOM.innerHTML = likeTemplate
+
+
+    }
     createElement(tag, className) {
         const element = document.createElement(tag)
         if (className) element.classList.add(className)

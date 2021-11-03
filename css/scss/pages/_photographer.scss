@@ -48,6 +48,7 @@
             border-radius:11px;
             padding: 3px;
             margin:0 4px 0 0; 
+            cursor: pointer;
         }
     }
     &--filter {
@@ -161,208 +162,41 @@
     margin: 0 0 0 .5rem;
 }
 
-// .box__photographer {
+.total__likes {
+    display: none;
+   @include media-min ("desktop-1440") {
+       display: block;
+    background-color: $secondary-bg;
+    width: 210px;
+    height:20px;
+    border-radius:5px 5px 0 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding:10px 0 10px 0;
+    margin: 0 2rem 0 0;
+
+
+    &--content {
+        
+        display:flex;
+        justify-content: space-around;
+    }
+    &--heart {
+      
+        display: flex;
+        justify-content:center;
+        align-items: center;
+
+        i {
+            color:black;
+            font-size:14px;
+        }
+    }
+    &--price {
+        color:black;
+    }
+   }
+
     
-//     &--nav {
-//         // @extend %edged;
-//         // width: 100%;
-//         height: auto;
-//         padding: 1.5rem  0 0 0;
-//         img {
-//             width: 150px;
-//             height: auto; 
-//         }
-//         // @include media-min ("phone-up-320") {
-//         //     max-width: 290px;
-//         // }
-//         // @include media-min ("phone-up-400") {
-//         //     max-width: 400px;
-//         // }
-//         // @include media-min ("tablet-up-768") {
-//         //     max-width: 700px;
-//         // }
-//         //  @include media-min ("laptop-1024") {
-//         //     max-width: 900px;
-//         // }
-        
-
-//     }
-//     &--data {
-//         @extend %edged;
-//         // width: 100%;
-//         // max-width: 270px;
-//         height: 115px;
-//         display: flex;
-//         justify-content:space-between;
-//         align-items:center;
-//         padding: 1.5rem 0 ;
-//         //  @include media-min ("phone-up-320") {
-//         //     max-width: 290px;
-//         // }
-        
-//         //   @include media-min ("phone-up-400") {
-//         //     max-width: 400px;
-           
-//         // }
-//         //    @include media-min ("tablet-up-768") {
-//         //     max-width: 700px;   
-//         // }
-//         //   @include media-min ("laptop-1024") {
-//         //     max-width: 900px;
-//         // }
-//         img{ 
-//             width:30%;
-//             height:auto;
-//             object-fit: cover; 
-//             clip-path:ellipse(50% 40%);
-//                @include media-min ("tablet-up-768") {
-//                    width: 15%;
-//                 clip-path:ellipse(50% 40%);      
-                
-//                 }
- 
-//         }
-//     }
-//     &--text { 
-        
-//         width: 70%;
-//         height: 120px;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-between;
-//         align-items: flex-start;
-        
-//         ul {
-//             width:80%;
-//             overflow: hidden;
-//             display: flex;
-//              span {
-//             border: 1px solid #C4C4C4;
-//             border-radius:11px;
-//             padding: 4px;
-//             margin:0 10px 0 0;
-//             }
-//         }
-//     }
-//     &--filter {
-//         @extend %edged;
-//         width: 100%;
-//         display:flex;
-//         align-items: center;
-//         font-weight: bold;
-//         select {
-//             margin-left:5px;
-//             background-color: $primary-bg;
-//             color: white;
-//             padding:5px;
-//             border-radius:5px;
-//             letter-spacing: 1px;
-//                 option {
-              
-//                 border-bottom: 1px solid white;
-//             }
-//         };
-        
-//             display:none;
-//             @include media-min ("tablet-up-768") {
-//                 display: flex;
-//                 max-width: 700px;
-//                 padding:0 0 1.5rem 0;
-//             }
-//             @include media-min ("laptop-1024") {
-//             max-width: 900px;
-//         }
-//     }
-//     &--list {
-//         @extend %edged;
-//         width: 100%;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//         max-width: 400px;
-//         margin-top: 30px;
-//         // margin: 2rem;
-
-//         //  @include media-min ("phone-up-320") {
-//         //     max-width: 290px;
-//         // }
-//         //     @include media-min ("phone-up-400") {
-//         //     max-width: 400px;
-           
-//         // }
-//         //     @include media-min ("tablet-up") {
-//         //         flex-direction: row;
-//         //         justify-content: flex-start;
-//         //         flex-wrap: wrap;
-//         //     }
-//         img {
-//             width: 100%;
-//             // height:200px;
-//             object-fit: cover;
-//             object-position: 50% 30%;
-//             border-radius: 5px;
-//         //      @include media-min ("phone-up-320") {
-//         //     width: 290px;
-//         // }
-//         //     @include media-min ("phone-up-400"){
-//         //          width: 400px;
-//         //     }
-//         //     @include media-min ("tablet-up-768"){
-//         //          width: 330px;
-//         //     }
-            
-//         };
-//         p{
-//             color: $primary-bg;
-//         }
-//         &--data{
-//             width: 100%;  
-//             display: flex;
-//             justify-content: space-between;
-//             align-items:center;
-//             margin: 1rem 0;
-//             :nth-child(1){
-//                 flex-shrink: 0;
-//             }
-//             :nth-child(2){
-//                display: flex;
-//                 width: 100%;
-//                 justify-content: flex-end;
-//                 flex-shrink: 1;
-//                 margin:0 .5rem
-
-                
-               
-                
-//             }
-//             p, span {
-                
-//                 font-size:16px;
-                
-//             }
-            
-//         }
-//     }
-//     &--contact { 
-        
-//         @extend %edged;
-//         position: absolute;
-//         width: 100%;
-//         max-width: 400px;
-//         bottom: 30px;
-//         left:0;
-//         right: 0;
-        
-//         display: flex;
-//         justify-content:center;
-//         align-items:center;
-       
-//         @include media-min ("tablet-up-768") {
-//             position: relative;
-//             display: flex;
-//             bottom: 0;
-            
-//         }
-//     }
-// }
+}

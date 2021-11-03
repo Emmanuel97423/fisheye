@@ -193,6 +193,7 @@ p {
   border-radius: 11px;
   padding: 4px;
   margin: 0 4px 0 0;
+  cursor: pointer;
 }
 
 .box__photographer--nav img {
@@ -299,6 +300,7 @@ p {
   border-radius: 11px;
   padding: 3px;
   margin: 0 4px;
+  cursor: pointer;
 }
 
 .box__photographer--container {
@@ -348,6 +350,7 @@ p {
   border-radius: 11px;
   padding: 3px;
   margin: 0 4px 0 0;
+  cursor: pointer;
 }
 .box__photographer--filter {
   display: none;
@@ -442,6 +445,40 @@ p {
 .fa-heart {
   cursor: pointer;
   margin: 0 0 0 0.5rem;
+}
+
+.total__likes {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  .total__likes {
+    display: block;
+    background-color: #D3573C;
+    width: 210px;
+    height: 20px;
+    border-radius: 5px 5px 0 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px 0 10px 0;
+    margin: 0 2rem 0 0;
+  }
+  .total__likes--content {
+    display: flex;
+    justify-content: space-around;
+  }
+  .total__likes--heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .total__likes--heart i {
+    color: black;
+    font-size: 14px;
+  }
+  .total__likes--price {
+    color: black;
+  }
 }
 
 .btn {
