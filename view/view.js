@@ -15,19 +15,19 @@ export class View {
 
             for (const tag of tags) {
 
-                tagsTemplate += `<span>#${tag}</span>`
+                tagsTemplate += `<span aria-labelly="lien des catégorie par tag">#${tag}</span>`
 
             }
 
             result += `
-          <article class="box__list--card">
+          <section class="box__list--card aria-label="liste photographes">
             
-            <a href="photographer.html?id=${photographer.id}"><img class="portrait" src="/img/avatar/${photographer.portrait}" alt="Vignette du photographe ${photographer.name}"></a>
+            <a href="photographer.html?id=${photographer.id}"><img class="portrait" role="img" src="/img/avatar/${photographer.portrait}" alt="Vignette du photographe ${photographer.name}"></a>
         <div class="box__list--text">
 
                <a href="photographer.html?id=${photographer.id}"><h2>${photographer.name}</h2></a>
-               <h3>${photographer.city}, <span id="country">${photographer.country}</span></h3>
-               <p>${photographer.tagline}</p>
+                <h3>${photographer.city}, <span id="country">${photographer.country}</span></h3>
+                <p>${photographer.tagline}</p>
                <span class="box__list--price">${photographer.price}€/jour</span>
             </div>
             <div class="box__list--tag">
@@ -35,7 +35,7 @@ export class View {
                 
 
             </div>
-        </article>
+        </section>
         `
 
         }
@@ -96,13 +96,13 @@ export class View {
                 contentTemplate += `
 
                 <div class="box__photographer--list--container">
-                      <div class="box__photographer--list--img"><img src="/img/${name}/${media.image}" alt="${media.title}" onclick="openModal();currentSlide(1)" class="hover-shadow"></div>
+                      <div class="box__photographer--list--img"><img role="img" src="/img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow"></div>
 
                     <div class="box__photographer--list--data">
-                        <p>${media.title}</p>
+                        <p aria-label="Titre">${media.title}</p>
                         <div class=likesBox>
-                            <p class="likes" aria-label="likes">${media.likes}</p>
-                        <i class="fas fa-heart"></i>
+                            <p class="likes" aria-label="Nombre de likes">${media.likes}</p>
+                        <i class="fas fa-heart" aria-hidden=true></i>
                         </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@ export class View {
                      <div class="box__photographer--list--container">
                         <div class="box__photographer--list--img">
 
-                            <video  role="video" muted  >
+                            <video  role="video" muted onclick="openModal()"  >
                             <source src="/img/${name}/${media.video}"
                                     type="video/mp4">
                             Sorry, your browser doesn't support embedded videos.
@@ -140,6 +140,17 @@ export class View {
 
                       </div>
         
+                
+                `
+                modalTemplate += `
+                 <div class="mySlides">
+                    <!--<div class="numbertext">1 / 4</div>-->
+                       <video  role="video" controls autoplay="true" muted width=100%  >
+                            <source src="/img/${name}/${media.video}"
+                                    type="video/mp4">
+                            Sorry, your browser doesn't support embedded videos.
+                        </video> 
+                </div>
                 
                 `
             }
@@ -168,14 +179,14 @@ export class View {
             likesArr.push(media.likes)
 
         })
-        console.log(likesArr.reduce(reducer))
+
         const total = likesArr.reduce(reducer)
 
         let likeTemplate = `
-                         <div class="total__likes--content">
-          <div class="total__likes--heart">${total} <i class="fas fa-heart"></i></div>
-          <div class="total__likes--price">${price}€/jour</div>
-        </div>
+                 <div class="total__likes--content">
+                        <div class="total__likes--heart" aria-label="Nombre de likes total ">${total} <i class="fas fa-heart" aria-hidden=true></i></div>
+                         <div class="total__likes--price" aria-label="Tarif">${price}€/jour</div>
+                 </div>
         `
 
         likeDOM.innerHTML = likeTemplate

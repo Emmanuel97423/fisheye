@@ -1,6 +1,24 @@
+
+
+
+let slideIndex = null;
+
 // Open the Modal
 const openModal = () => {
+
     document.getElementById("myModal").style.display = "block";
+    document.querySelectorAll(".box__photographer--list--container").forEach((slide, index) => {
+
+
+        slide.addEventListener('click', (e) => {
+            e.preventDefault();
+            slideIndex = index;
+            // console.log('index:', index)
+            // console.log('slide:', slide)
+        })
+
+    })
+
 }
 
 // Close the Modal
@@ -8,38 +26,61 @@ const closeModal = () => {
     document.getElementById("myModal").style.display = "none";
 }
 
+// setTimeout(() => {
+//     const thumbail = document.querySelectorAll(".mySlides")
+//     console.log('thumbail:', thumbail)
+//     thumbail.forEach((slide, index) => {
+
+//         slide.addEventListener('click', (e) => {
+//             e.preventDefault();
+//             console.log('hello')
+//             e.target.value
+//             console.log('index:', index)
+//         })
+
+//     })
+// }, 2000)
+
 const showSlides = async (n) => {
     setTimeout(() => {
         let i;
-        let slides = document.querySelectorAll(".mySlides");
+
         // console.log('slides:', slides.length)
+        const slides = document.querySelectorAll(".mySlides");
+        setInterval(() => {
 
+            slides.forEach((slide, index) => {
+                slide.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    slideIndex = index
+                    // slide.style.display = "block"
+                })
 
-        slides.forEach((slide, index) => {
-
-
-            slide.addEventListener
-
-        })
-
+            })
+        }, 2000)
         // var dots = document.getElementsByClassName("demo");
         // let captionText = document.getElementById("caption");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
+
+
+        if (n > slides.length - 1) { slideIndex = 0 }
+        if (n < 0) { slideIndex = slides.length - 1 }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
         // for (i = 0; i < dots.length; i++) {
         //     dots[i].className = dots[i].className.replace(" active", "");
         // }
-        slides[slideIndex - 1].style.display = "block";
+
+        slides[slideIndex].style.display = "block";
+
+
         // dots[slideIndex - 1].className += " active";
         // captionText.innerHTML = dots[slideIndex - 1].alt;
     }, 2000)
 }
 
-let slideIndex = 3;
-showSlides(slideIndex);
+
+// showSlides(slideIndex);
 
 // Next/previous controls
 const plusSlides = (n) => {
@@ -47,9 +88,38 @@ const plusSlides = (n) => {
 }
 
 // Thumbnail image controls
-const currentSlide = (n) => {
-    showSlides(slideIndex = n);
-}
+// setTimeout(() => {
+//     const currentSlideDOM = document.querySelectorAll(".box__photographer--list--img")
+//     currentSlideDOM.forEach((slide, index) => {
+
+//         slide.addEventListener('click', (e) => {
+//             e.preventDefault();
+
+//             showSlides(index)
+//         })
+
+//     })
+// }, 1000)
+
+setInterval(() => {
+    const currentSlideDOM = document.querySelectorAll(".box__photographer--list--img")
+    // console.log('currentSlideDOM:', currentSlideDOM)
+
+    currentSlideDOM.forEach((slide, index) => {
+
+        slide.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            showSlides(index)
+        })
+
+    })
+}, 1000)
+// const currentSlide = () => {
+//     showSlides(slideIndex);
+// }
+
+
 
 
 

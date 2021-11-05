@@ -24,26 +24,24 @@ if (storageTag) {
 
 //Filter by tag
 setInterval(() => {
-    setTimeout(() => {
-        const tags = document.querySelectorAll('span')
-        for (const tag of tags) {
-            tag.addEventListener('click', (e) => {
-                e.preventDefault();
-                const photographerView = new View();
+    const tags = document.querySelectorAll('span')
+    for (const tag of tags) {
+        tag.addEventListener('click', (e) => {
+            e.preventDefault();
+            const photographerView = new View();
 
 
-                photoManager.getDataByTags(tag.innerHTML).then((result) => {
-                    console.log('result:', result)
-                    photographerView.displayPhotographers(result)
-                    // window.open('./index.html', "_self")
+            photoManager.getDataByTags(tag.innerHTML).then((result) => {
+
+                photographerView.displayPhotographers(result)
+                // window.open('./index.html', "_self")
 
 
-                }).catch((error) => { console.log(error) })
+            }).catch((error) => { console.log(error) })
 
-            })
+        })
 
-        }
-    }, 2000)
+    }
 }, 2000)
 
 

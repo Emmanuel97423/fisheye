@@ -14,38 +14,37 @@
 
 <div class="box__photographer--container">
           <!-- Navigation bar -->
-    <nav class=box__photographer--nav>
+    <nav class=box__photographer--nav aria-label="Navigation">
        
-            <img src="img/logo.png" id="logo__top" alt="Logo Fisheye">
+            <img src="img/logo.png" id="logo__top" alt="Logo Fisheye - Page d'accueil" role="img">
        
     </nav>
-    <section id="photographer" class="box__photographer--data">
+    <section id="photographer" class="box__photographer--data" aria-label="Liste des médias">
         
     </section>
     <!-- Filter -->
-<div class="box__photographer--filter">
+  <div class="box__photographer--filter" aria-label="Filtre de navigation" role="filter">
     <label for="select">Trier par:</label>
-    <select name="select" id="select" aria-label="listbox">
+    <select name="select" id="select" >
         <option >--Trier</option>
         <option value="popularity">Popularité</option>
         <option value="date">Date</option>
         <option value="title">Titre</option>
-
     </select>
     </div>
-    <section id="content__list" class="box__photographer--list">
+    <section id="content__list" class="box__photographer--list" aria-label="Contenu du photographe">
         
 
 
     </section>
 
     <!-- total likes -->
-    <div id="total__likes" class="total__likes">
+    <div id="total__likes" class="total__likes" >
        
     </div>
 
     <!-- The Modal/Lightbox -->
-<div id="myModal" class="modal">
+<div id="myModal" class="modal" role="modal">
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div  class="modal-content">
     <div id= "modal__content">
@@ -105,7 +104,7 @@
 
 
 
-    <footer class="footer">
+    <footer class="footer" role="footer">
         <div class="footer__box">
              <p>120 009</p>
             <i class="fas fa-heart"></i>
@@ -114,7 +113,7 @@
              <p>300€ / jour</p>      
         </div>
     </footer>
-</div>
+  </div>
   <div class="formModal" id ="formModal">
      <span class="close cursor" onclick="closeModalForm()">&times;</span>
             <form  id ="formModal__content">
