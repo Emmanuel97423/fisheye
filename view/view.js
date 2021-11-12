@@ -15,27 +15,27 @@ export class View {
 
             for (const tag of tags) {
 
-                tagsTemplate += `<span aria-labelly="Navigation par tag">#${tag}</span>`
+                tagsTemplate += `<span aria-label="Navigation par tag">#${tag}</span>`
 
             }
 
             result += `
-          <section class="box__list--card aria-label="liste photographes">
+          <div class="box__list--card aria-label="liste photographes">
             
-            <a href="photographer.html?id=${photographer.id}"><img class="portrait" role="img" aria-label="Portrait du photographe" src="/img/avatar/${photographer.portrait}" alt="Vignette du photographe ${photographer.name}"></a>
-        <div class="box__list--text">
+            <a href="photographer.html?id=${photographer.id}"><img class="portrait" role="img" aria-label="Portrait du photographe" src="./img/avatar/${photographer.portrait}" alt="Vignette du photographe ${photographer.name}"></a>
+                    <div class="box__list--text">
 
-               <a href="photographer.html?id=${photographer.id}"><h2 aria-label="Nom du photographe">${photographer.name}</h2></a>
-                <h3 aria-label="Ville du photographe">${photographer.city}, <span id="country" aria-labelly="Ville du photographe">${photographer.country}</span></h3>
-                <p aria-label="Expression du photographe">${photographer.tagline}</p>
-               <span class="box__list--price" aria-labelly="Tarif du photographe">${photographer.price}€/jour</span>
-            </div>
+                        <a href="photographer.html?id=${photographer.id}"><h2 aria-label="Nom du photographe ${photographer.name}">${photographer.name}</h2></a>
+                            <h3 aria-label="Ville du photographe: ${photographer.city}">${photographer.city}, <span id="country" aria-labelly="Ville du photographe">${photographer.country}</span></h3>
+                            <p aria-label="Expression du photographe: ${photographer.tagline}">${photographer.tagline}</p>
+                        <span class="box__list--price" aria-label="Tarif du photographe ${photographer.price}">${photographer.price}€/jour</span>
+                        </div>
             <div class="box__list--tag" aria-label="Navigation par tag">
                 ${tagsTemplate}
                 
 
             </div>
-        </section>
+        </div>
         `
 
         }
@@ -62,7 +62,7 @@ export class View {
             <h2 aria-label="Nom du photographe">${photographer[0].name}</h2>
             <h3 aria-label="Ville du photographe">${photographer[0].city}, ${photographer[0].country}</h3>
             <p aria-label="Mot du photographe">${photographer[0].tagline}</p>
-            <ul id ='tagsList' aria-label="Navigation par tag >
+            <ul id ='tagsList' aria-label="Navigation par tag"       >
             
                 ${tagsTemplate}
 
@@ -80,6 +80,13 @@ export class View {
     displayContentById(medias, name) {
         const contentDOM = this.getElement("#content__list")
         const modalDOM = this.getElement('#modal__content')
+
+        // const $body = $('#body')
+        // const $openModalBtn = $('.open-modal-btn')
+        // const $mainWrapper = $('#main-wrapper')
+        // const $modal = $('.modal')
+        // const $modalTitle = $('.modal-title')
+        // const $modalCloseBtn = $('.modal-close-btn')
 
 
 
@@ -100,8 +107,8 @@ export class View {
 
                     <div class="box__photographer--list--data">
                         <p aria-label="Titre du média">${media.title}</p>
-                        <div class=likesBox>
-                            <p class="likes" aria-label="Nombre de likes">${media.likes}</p>
+                        <div class=likesBox aria-label="Nombre de likes"    >
+                            <p class="likes" >${media.likes}</p>
                         <i class="fas fa-heart" aria-hidden=true></i>
                         </div>
                 </div>
@@ -109,7 +116,7 @@ export class View {
             `
 
                 modalTemplate += `
-                 <div class="mySlides">
+                 <div class="mySlides" >
                     <!--<div class="numbertext">1 / 4</div>-->
                     <img role="img" aria-label="image agrandi"src="/img/${name}/${media.image}" >
                 </div>
