@@ -15,22 +15,22 @@ export class View {
 
             for (const tag of tags) {
 
-                tagsTemplate += `<span aria-labelly="lien des catégorie par tag">#${tag}</span>`
+                tagsTemplate += `<span aria-labelly="Navigation par tag">#${tag}</span>`
 
             }
 
             result += `
           <section class="box__list--card aria-label="liste photographes">
             
-            <a href="photographer.html?id=${photographer.id}"><img class="portrait" role="img" src="/img/avatar/${photographer.portrait}" alt="Vignette du photographe ${photographer.name}"></a>
+            <a href="photographer.html?id=${photographer.id}"><img class="portrait" role="img" aria-label="Portrait du photographe" src="/img/avatar/${photographer.portrait}" alt="Vignette du photographe ${photographer.name}"></a>
         <div class="box__list--text">
 
-               <a href="photographer.html?id=${photographer.id}"><h2>${photographer.name}</h2></a>
-                <h3>${photographer.city}, <span id="country">${photographer.country}</span></h3>
-                <p>${photographer.tagline}</p>
-               <span class="box__list--price">${photographer.price}€/jour</span>
+               <a href="photographer.html?id=${photographer.id}"><h2 aria-label="Nom du photographe">${photographer.name}</h2></a>
+                <h3 aria-label="Ville du photographe">${photographer.city}, <span id="country" aria-labelly="Ville du photographe">${photographer.country}</span></h3>
+                <p aria-label="Expression du photographe">${photographer.tagline}</p>
+               <span class="box__list--price" aria-labelly="Tarif du photographe">${photographer.price}€/jour</span>
             </div>
-            <div class="box__list--tag">
+            <div class="box__list--tag" aria-label="Navigation par tag">
                 ${tagsTemplate}
                 
 
@@ -52,24 +52,24 @@ export class View {
 
         for (const tag of tags) {
 
-            tagsTemplate += ` <li><span class="tag">#${tag}</span></li>`
+            tagsTemplate += ` <li><span class="tag" aria-label=" tag">#${tag}</span></li>`
 
         }
 
 
         result = `
             <div class="box__photographer--text">
-            <h2>${photographer[0].name}</h2>
-            <h3>${photographer[0].city}, ${photographer[0].country}</h3>
-            <p>${photographer[0].tagline}</p>
-            <ul id ='tagsList'>
+            <h2 aria-label="Nom du photographe">${photographer[0].name}</h2>
+            <h3 aria-label="Ville du photographe">${photographer[0].city}, ${photographer[0].country}</h3>
+            <p aria-label="Mot du photographe">${photographer[0].tagline}</p>
+            <ul id ='tagsList' aria-label="Navigation par tag >
             
                 ${tagsTemplate}
 
             </ul>
         </div>
-        <div class="box__photographer--contact"><button class="btn btn-xl" type="button" onClick="openModalForm()" >Contactez-moi</button></div>
-        <img src="/img/avatar/${photographer[0].portrait}" alt="vignette-du-photographe">
+        <div class="box__photographer--contact"><button class="btn btn-xl" type="button" onClick="openModalForm()" aria-label="Button de contact" >Contactez-moi</button></div>
+        <img src="/img/avatar/${photographer[0].portrait}" alt="vignette-du-photographe" aria-label="Portrait du photographe" role="img">
         
         `
 
@@ -96,10 +96,10 @@ export class View {
                 contentTemplate += `
 
                 <div class="box__photographer--list--container">
-                      <div class="box__photographer--list--img"><img role="img" src="/img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow"></div>
+                      <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo" src="/img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow"></div>
 
                     <div class="box__photographer--list--data">
-                        <p aria-label="Titre">${media.title}</p>
+                        <p aria-label="Titre du média">${media.title}</p>
                         <div class=likesBox>
                             <p class="likes" aria-label="Nombre de likes">${media.likes}</p>
                         <i class="fas fa-heart" aria-hidden=true></i>
@@ -111,7 +111,7 @@ export class View {
                 modalTemplate += `
                  <div class="mySlides">
                     <!--<div class="numbertext">1 / 4</div>-->
-                    <img src="/img/${name}/${media.image}" >
+                    <img role="img" aria-label="image agrandi"src="/img/${name}/${media.image}" >
                 </div>
                 
                 `
@@ -123,7 +123,7 @@ export class View {
                      <div class="box__photographer--list--container">
                         <div class="box__photographer--list--img">
 
-                            <video  role="video" muted onclick="openModal()"  >
+                            <video  role="video" muted   onclick="openModal()"  aria-label = "vignette video du photographe" >
                             <source src="/img/${name}/${media.video}"
                                     type="video/mp4">
                             Sorry, your browser doesn't support embedded videos.
@@ -131,9 +131,9 @@ export class View {
                         
                             </div>
                         <div class="box__photographer--list--data">
-                                <p role="titre-media">${media.title}</p>
+                                <p aria-label="titre-media">${media.title}</p>
                                 <div class=likesBox>
-                                    <p class="likes" aria-label="likes">${media.likes}</p>
+                                    <p class="likes" aria-label="Nombre de likes">${media.likes}</p>
                                 <i class="fas fa-heart"></i>
                                 </div>
                         </div>
@@ -145,7 +145,7 @@ export class View {
                 modalTemplate += `
                  <div class="mySlides">
                     <!--<div class="numbertext">1 / 4</div>-->
-                       <video  role="video" controls autoplay="true" muted width=100%  >
+                       <video  role="video" aria-label = "video du photographe" controls  muted width=100%  >
                             <source src="/img/${name}/${media.video}"
                                     type="video/mp4">
                             Sorry, your browser doesn't support embedded videos.
