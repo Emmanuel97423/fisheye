@@ -76,12 +76,18 @@ const likesInc = () => {
     try {
 
         let likeBtn = document.querySelectorAll('.likes')
+        let totalStorage = localStorage.getItem('total-like')
+        let total = totalStorage
 
         likeBtn.forEach(btn => {
             let nextNode = btn.nextElementSibling
             nextNode.addEventListener('click', (e) => {
                 e.preventDefault();
                 btn.innerText++
+                total++
+                localStorage.setItem('total-like', total)
+
+
             })
         })
     } catch (error) {
@@ -91,13 +97,6 @@ const likesInc = () => {
 
 }
 likesInc()
-
-//Total like
-
-
-// const likes = new MediasManager()
-
-
 const storage = localStorage
 
 setTimeout(() => {
@@ -107,7 +106,7 @@ setTimeout(() => {
         tag.addEventListener('click', (e) => {
             e.preventDefault();
             storage.setItem('tagSelected', tag.innerHTML)
-            window.open('./index.html', "_self")
+            window.open('/', "_self")
         })
     })
 }, 2000)

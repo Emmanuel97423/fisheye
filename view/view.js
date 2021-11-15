@@ -103,7 +103,7 @@ export class View {
                 contentTemplate += `
 
                 <div class="box__photographer--list--container">
-                      <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo" src="/img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow"></div>
+                      <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo" src="./img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow"></div>
 
                     <div class="box__photographer--list--data">
                         <p aria-label="Titre du média">${media.title}</p>
@@ -179,6 +179,8 @@ export class View {
         const likeDOM = this.getElement('#total__likes')
         const reducer = (previousValue, currentValue) => previousValue + currentValue;
         let likesArr = []
+        let storage = localStorage
+        let likeTemplate = ""
 
 
         medias.forEach(media => {
@@ -188,13 +190,15 @@ export class View {
         })
 
         const total = likesArr.reduce(reducer)
+        storage.setItem('total-like', total)
 
-        let likeTemplate = `
+        likeTemplate = `
                  <div class="total__likes--content">
-                        <div class="total__likes--heart" aria-label="Nombre de likes total ">${total} <i class="fas fa-heart" aria-hidden=true></i></div>
+                        <div  class="total__likes--heart" aria-label="Nombre de likes total ">${storage.getItem('total-like')} <i class="fas fa-heart" aria-hidden=true></i></div>
                          <div class="total__likes--price" aria-label="Tarif">${price}€/jour</div>
                  </div>
         `
+
 
         likeDOM.innerHTML = likeTemplate
 
