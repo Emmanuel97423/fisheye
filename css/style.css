@@ -511,6 +511,10 @@ p {
   box-shadow: 0 0.125em rgba(255, 255, 255, 0.4), inset 0 0.063em rgba(255, 255, 255, 0.4), inset 0 -0.188em #901C1C;
 }
 
+.btn:focus {
+  border: 3px solid black;
+}
+
 .btn-xl {
   padding: 0 10px;
   height: 40px;

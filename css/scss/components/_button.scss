@@ -44,6 +44,10 @@
    };
    @extend %btn-common;
    @include btn
+
+}
+.btn:focus{
+    border: 3px solid black
 }
 .btn-xl {
     @include btn-xl;
