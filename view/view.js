@@ -197,7 +197,7 @@ export class View {
                 modalTemplate += `
                  <div class="mySlides" >
                     <!--<div class="numbertext">1 / 4</div>-->
-                    <img role="img" aria-label="image agrandi"src="/img/${name}/${media.image}" >
+                    <img role="img" aria-label="image agrandi"src="./img/${name}/${media.image}" >
                 </div>
                 
                 `
@@ -210,7 +210,7 @@ export class View {
                         <div class="box__photographer--list--img">
 
                             <video  role="video" muted   onclick="openModal()"  aria-label = "vignette video du photographe" >
-                            <source src="/img/${name}/${media.video}"
+                            <source src="./img/${name}/${media.video}"
                                     type="video/mp4">
                             Sorry, your browser doesn't support embedded videos.
                         </video>
