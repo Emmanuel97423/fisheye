@@ -16,7 +16,7 @@
           <!-- Navigation bar -->
     <nav class=box__photographer--nav aria-label="Navigation">
        
-            <img src="img/logo.png" id="logo__top" alt="Logo Fisheye - lien vers page d'accueil" aria-labelledby="Logo du site - retour à la page d'accueil" role="img" tabindex="1">
+            <img src="img/logo.png" id="logo__top" alt="Logo Fisheye - lien vers page d'accueil" aria-labelledby="Logo du site - retour à la page d'accueil" role="img" tabindex="0">
        
     </nav>
     <section id="photographer" class="box__photographer--data" aria-label="Liste des médias">
@@ -25,7 +25,7 @@
     <!-- Filter -->
   <div class="box__photographer--filter" aria-label="Filtre de navigation" role="filter" >
     <label for="select">Trier par:</label>
-    <select name="select" id="select" tabindex="19">
+    <select name="select" id="select" tabindex="0">
         <option >--Trier</option>
         <option value="popularity">Popularité</option>
         <option value="date">Date</option>
@@ -138,14 +138,15 @@
             </form>
       </div>
 
-<script  async  type ='module' src='utils/filter.js'></script>
+<!-- <script  async  type ='module' src='utils/filter.js'></script> -->
+<script async src='utils/keyboardEvent.js'></script>
 <script async type='module' src='controllers/photographer.js'></script>
-<script async type='module' src='utils/lightboxClass.js'></script>
+<!-- <script async type='module' src='utils/lightboxClass.js'></script> -->
 <script src='utils/modal.js'></script>
 <script async type='module' src='utils/form.js'></script>
  <script  src='utils/links.js'></script>
  <!-- <script async type='module' src='script.js'></script> -->
- <script async type='module' src='utils/likes.js'></script>
+ <!-- <script async type='module' src='utils/likes.js'></script> -->
 
 <script async  src='utils/lightbox.js'></script>
 

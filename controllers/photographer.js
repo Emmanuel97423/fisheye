@@ -75,17 +75,18 @@ const likesInc = () => {
 
     try {
 
-        let likeBtn = document.querySelectorAll('.likes')
-        let totalStorage = localStorage.getItem('total-like')
-        let total = totalStorage
+        let likeBtn = document.querySelectorAll('.likes');
+        let totalStorage = localStorage.getItem('total-like');
+        let total = totalStorage;
+
+        let totalLikeDOM = document.getElementById('total__like')
 
         likeBtn.forEach(btn => {
             let nextNode = btn.nextElementSibling
             nextNode.addEventListener('click', (e) => {
                 e.preventDefault();
-                btn.innerText++
-                total++
-                localStorage.setItem('total-like', total)
+                btn.innerText++;
+                totalLikeDOM.innerText++
 
 
             })
@@ -110,6 +111,8 @@ setTimeout(() => {
         })
     })
 }, 2000)
+
+
 
 // const tags = document.querySelectorAll('span')
 // for (const tag of tags) {

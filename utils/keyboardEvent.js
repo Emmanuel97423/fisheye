@@ -1,11 +1,14 @@
-window.addEventListener("keydown", function (event) {
+
+window.addEventListener("keydown", (event) => {
     if (event.defaultPrevented) {
         return; // Ne devrait rien faire si l'événement de la touche était déjà consommé.
     }
-
+    let element = document.activeElement;
     switch (event.key) {
+
         case "ArrowDown":
             // Faire quelque chose pour la touche "flèche vers le bas" pressée.
+            console.log("Arrow down")
             break;
         case "ArrowUp":
             // Faire quelque chose pour la touche "up arrow" pressée.
@@ -18,9 +21,19 @@ window.addEventListener("keydown", function (event) {
             break;
         case "Enter":
             // Faire quelque chose pour les touches "enter" ou "return" pressées.
+            // element = document.activeElement
+            element.click()
+
+            break;
+        case " ":
+            // Faire quelque chose pour les touches "espace" .
+            // element = document.activeElement
+            element.click()
+
             break;
         case "Escape":
             // Faire quelque chose pour la touche "esc" pressée.
+
             break;
         default:
             return; // Quitter lorsque cela ne gère pas l'événement touche.
