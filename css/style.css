@@ -233,21 +233,6 @@ p {
 .footer {
   display: none;
 }
-@media screen and (min-width: 720px) {
-  .footer {
-    position: absolute;
-    bottom: 0;
-    right: 20px;
-    display: flex;
-    background-color: #D3573C;
-    height: 60px;
-    width: 250px;
-    border-radius: 5px 5px 0 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-}
 .footer__box {
   width: 50%;
   display: flex;
