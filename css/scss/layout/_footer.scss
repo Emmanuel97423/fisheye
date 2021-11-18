@@ -1,6 +1,6 @@
 .footer {
   display: none;
-    @include media-min ("tablet-up-768") {
+    @include media-min ("tablet-up-720") {
           position: absolute;
         bottom: 0;
         right: 20px;

@@ -233,7 +233,7 @@ p {
 .footer {
   display: none;
 }
-@media screen and (min-width: ) {
+@media screen and (min-width: 720px) {
   .footer {
     position: absolute;
     bottom: 0;
@@ -710,7 +710,6 @@ img.hover-shadow {
   overflow: auto;
   background-color: #D3573C;
   text-align: center;
-  transition: all 0.5;
 }
 @media screen and (min-width: 1024px) {
   .formModal {

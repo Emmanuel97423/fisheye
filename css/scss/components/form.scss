@@ -10,7 +10,7 @@
   overflow: auto;
   background-color: $secondary-bg;
   text-align: center;
-  transition: all 0.5;
+  
           @include media-min ("desktop-1024") {
                background-color: rgba(0, 0, 0, 0.95);
              
