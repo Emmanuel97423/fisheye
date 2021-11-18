@@ -2,5 +2,5 @@
 const logo = document.getElementById('logo__top')
 logo.addEventListener('click', (e) => {
     e.preventDefault();
-    window.open('./', "_self")
+    window.open('./fisheye', "_self")
 })
