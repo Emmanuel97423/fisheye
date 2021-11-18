@@ -68,7 +68,7 @@ export class View {
             <h1 class=box__photographer--title aria-label="Nom du photographe: ${photographer[0].name}" tabindex="0">${photographer[0].name}</h1>
             <h2 aria-label="Ville du photographe: ${photographer[0].city}" tabindex="0">${photographer[0].city}, ${photographer[0].country}</h2>
             <p aria-label="Mot du photographe" tabindex="0">${photographer[0].tagline}</p>
-            <ul id ='tagsList' aria-label="Navigation par tag"       >
+            <ul id ='tagsList' aria-label="Navigation par tag">
             
                 ${tagsTemplate}
 

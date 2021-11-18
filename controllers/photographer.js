@@ -107,7 +107,7 @@ setTimeout(() => {
         tag.addEventListener('click', (e) => {
             e.preventDefault();
             storage.setItem('tagSelected', tag.innerHTML)
-            window.open('/', "_self")
+            window.open('./', "_self")
         })
     })
 }, 2000)
