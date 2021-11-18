@@ -26,7 +26,7 @@ export class View {
                     <div class="box__list--text">
 
                         <a href="photographer.html?id=${photographer.id}"><h2 aria-label="Nom du photographe ${photographer.name}">${photographer.name}</h2></a>
-                            <h3 aria-label="Ville du photographe: ${photographer.city}" tabindex="0">${photographer.city}, <span id="country" aria-labelly="Ville du photographe">${photographer.country}</span></h3>
+                            <h3 aria-label="Ville du photographe: ${photographer.city}" tabindex="0">${photographer.city}, <span id="country" aria-label="Ville du photographe">${photographer.country}</span></h3>
                             <p aria-label="Expression du photographe: ${photographer.tagline}" tabindex="0">${photographer.tagline}</p>
                         <span class="box__list--price" aria-label="Tarif du photographe ${photographer.price}" tabindex="0">${photographer.price}€/jour</span>
                         </div>
