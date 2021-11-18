@@ -75,7 +75,7 @@ export class View {
             </ul>
         </div>
         <div class="box__photographer--contact"><button class="btn btn-xl" type="button" onClick="openModalForm()" aria-label="Contactez-moi" tabindex="0" >Contactez-moi</button></div>
-        <img src="/img/avatar/${photographer[0].portrait}" alt="vignette-du-photographe" aria-label="Portrait du photographe" role="img" tabindex="0">
+        <img src="./img/avatar/${photographer[0].portrait}" alt="vignette-du-photographe" aria-label="Portrait du photographe" role="img" tabindex="0">
         
         `
 
