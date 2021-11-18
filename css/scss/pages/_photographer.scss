@@ -13,9 +13,11 @@
         display: flex;
         justify-content:space-between;
         align-items:center;
+        margin:4rem 0 4rem 0;
         
                 @include media-min ("tablet-up-720") {
                 height: 150px;
+                
             }
         img {
             clip-path:circle(38%);
@@ -34,6 +36,7 @@
         flex-direction: column;
         justify-content:center;
         align-items: flex-start;
+        gap: 10px;
         
         h2 {
             font-size: 25px;

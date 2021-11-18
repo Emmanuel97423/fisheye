@@ -4,13 +4,16 @@ html{
 }
 h1{
     font-family: DM Sans;
-    font-size: 16px;
+    font-size: 36px;
     font-style: normal;
     font-weight: 400;
     line-height: 47px;
     letter-spacing: 0em;
     text-align: left;
-    color: $primary-bg;
+    color: $primary-text;
+    @include media-min ("desktop-1024") {
+        font-size: 25px;
+    }
 }
 h2{
     font-family: DM Sans;
@@ -20,14 +23,14 @@ h2{
     // line-height: 47px;
     letter-spacing: 0em;
     text-align: center;
-    color: $primary-text;
+    color: $primary-bg;
     @include media-min ("desktop-1024") {
         font-size: 25px;
     }
 }
 h3 {
     font-family: DM Sans;
-    font-size: 13px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 17px;
@@ -37,7 +40,7 @@ h3 {
 }
 span {
     font-family: DM Sans;
-    font-size: 10px;
+    font-size: 11px;
     font-style: normal;
     font-weight: bold;
     line-height: 16px;
@@ -47,7 +50,7 @@ span {
 }
 p {
     font-family: DM Sans;
-    font-size: 10px;
+    font-size: 11px;
     font-style: normal;
     font-weight: 400;
     line-height: 13px;
@@ -59,7 +62,7 @@ p {
 }
 .box__list--price{
     font-family: DM Sans;
-    font-size: 9px;
+    font-size: 11px;
     font-style: normal;
     font-weight: 400;
     line-height: 12px;
@@ -79,5 +82,7 @@ p {
     text-align: center;
     color: black;
 }
-
+.box__photographer--title {
+    font-size: 64px;
+}
   
