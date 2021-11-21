@@ -87,93 +87,9 @@ export class View {
         const contentDOM = this.getElement("#content__list")
         const modalDOM = this.getElement('#modal__content')
 
-        // const $body = $('#body')
-        // const $openModalBtn = $('.open-modal-btn')
-        // const $mainWrapper = $('#main-wrapper')
-        // const $modal = $('.modal')
-        // const $modalTitle = $('.modal-title')
-        // const $modalCloseBtn = $('.modal-close-btn')
-
-
-
         let contentTemplate = ""
         let modalTemplate = ""
 
-
-
-        // for (const media of medias) {
-
-
-        //     if (media.image) {
-
-        //         contentTemplate += `
-
-        //         <div class="box__photographer--list--container">
-        //               <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo" src="./img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow"></div>
-
-        //             <div class="box__photographer--list--data">
-        //                 <p aria-label="Titre du média">${media.title}</p>
-        //                 <div class=likesBox aria-label="Nombre de likes"    >
-        //                     <p class="likes" >${media.likes}</p>
-        //                 <i class="fas fa-heart" aria-hidden=true></i>
-        //                 </div>
-        //         </div>
-        //     </div>
-        //     `
-
-        //         modalTemplate += `
-        //          <div class="mySlides" >
-        //             <!--<div class="numbertext">1 / 4</div>-->
-        //             <img role="img" aria-label="image agrandi"src="/img/${name}/${media.image}" >
-        //         </div>
-
-        //         `
-
-
-        //     } else if (media.video) {
-        //         contentTemplate += `
-
-        //              <div class="box__photographer--list--container">
-        //                 <div class="box__photographer--list--img">
-
-        //                     <video  role="video" muted   onclick="openModal()"  aria-label = "vignette video du photographe" >
-        //                     <source src="/img/${name}/${media.video}"
-        //                             type="video/mp4">
-        //                     Sorry, your browser doesn't support embedded videos.
-        //                 </video>
-
-        //                     </div>
-        //                 <div class="box__photographer--list--data">
-        //                         <p aria-label="titre-media">${media.title}</p>
-        //                         <div class=likesBox>
-        //                             <p class="likes" aria-label="Nombre de likes">${media.likes}</p>
-        //                         <i class="fas fa-heart"></i>
-        //                         </div>
-        //                 </div>
-
-        //               </div>
-
-
-        //         `
-        //         modalTemplate += `
-        //          <div class="mySlides">
-        //             <!--<div class="numbertext">1 / 4</div>-->
-        //                <video  role="video" aria-label = "video du photographe" controls  muted width=100%  >
-        //                     <source src="/img/${name}/${media.video}"
-        //                             type="video/mp4">
-        //                     Sorry, your browser doesn't support embedded videos.
-        //                 </video> 
-        //         </div>
-
-        //         `
-        //     }
-        //     contentDOM.innerHTML = contentTemplate
-        //     modalDOM.innerHTML = modalTemplate
-
-
-        //     // contentDOM.innerHTML += videoTemplate
-
-        // }
 
         medias.forEach((media, index) => {
 
@@ -232,7 +148,7 @@ export class View {
                  <div class="mySlides">
                     <!--<div class="numbertext">1 / 4</div>-->
                        <video  role="video" aria-label = "video du photographe" controls  muted width=100%  >
-                            <source src="/img/${name}/${media.video}"
+                            <source src="./img/${name}/${media.video}"
                                     type="video/mp4">
                             Sorry, your browser doesn't support embedded videos.
                         </video> 

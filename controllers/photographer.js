@@ -8,7 +8,7 @@ let photographerName = ""
 let medias = {}
 let price = ""
 
-//Photographe Manager
+//Photographes Manager
 const photoManager = new PhotographersManager()
 //Affichage données d'un photographe par son id
 photoManager.getDataById(id).then((result) => {

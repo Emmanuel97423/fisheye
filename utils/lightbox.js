@@ -1,51 +1,32 @@
 
-
-
 let slideIndex = null;
 
-// Open the Modal
+// Ouvre la modal 
 const openModal = () => {
 
     document.getElementById("myModal").style.display = "block";
     document.querySelectorAll(".box__photographer--list--container").forEach((slide, index) => {
 
-
         slide.addEventListener('click', (e) => {
             e.preventDefault();
             slideIndex = index;
-            // console.log('index:', index)
-            // console.log('slide:', slide)
         })
 
     })
 
 }
 
-// Close the Modal
+// Ferme la modal
 const closeModal = () => {
     document.getElementById("myModal").style.display = "none";
 }
 
-// setTimeout(() => {
-//     const thumbail = document.querySelectorAll(".mySlides")
-//     console.log('thumbail:', thumbail)
-//     thumbail.forEach((slide, index) => {
-
-//         slide.addEventListener('click', (e) => {
-//             e.preventDefault();
-//             console.log('hello')
-//             e.target.value
-//             console.log('index:', index)
-//         })
-
-//     })
-// }, 2000)
+//Affiche la photo cliquée
 
 const showSlides = async (n) => {
     setTimeout(() => {
         let i;
 
-        // console.log('slides:', slides.length)
         const slides = document.querySelectorAll(".mySlides");
         setInterval(() => {
 
@@ -80,30 +61,17 @@ const showSlides = async (n) => {
 }
 
 
-// showSlides(slideIndex);
 
-// Next/previous controls
+
+// Navigation lightbox
 const plusSlides = (n) => {
     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
-// setTimeout(() => {
-//     const currentSlideDOM = document.querySelectorAll(".box__photographer--list--img")
-//     currentSlideDOM.forEach((slide, index) => {
-
-//         slide.addEventListener('click', (e) => {
-//             e.preventDefault();
-
-//             showSlides(index)
-//         })
-
-//     })
-// }, 1000)
 
 setInterval(() => {
     const currentSlideDOM = document.querySelectorAll(".box__photographer--list--img")
-    // console.log('currentSlideDOM:', currentSlideDOM)
+
 
     currentSlideDOM.forEach((slide, index) => {
 
@@ -115,15 +83,12 @@ setInterval(() => {
 
     })
 }, 1000)
-// const currentSlide = () => {
-//     showSlides(slideIndex);
-// }
 
 
 
 
 
-//keyboard event
+//Navigation clavier
 window.addEventListener("keydown", function (event) {
     if (event.defaultPrevented) {
         return; // Ne devrait rien faire si l'événement de la touche était déjà consommé.
