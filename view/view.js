@@ -111,9 +111,9 @@ export class View {
             `
 
                 modalTemplate += `
-                 <div class="mySlides" >
+                 <div class="mySlides"  >
                     <!--<div class="numbertext">1 / 4</div>-->
-                    <img role="img" aria-label="image agrandi"src="./img/${name}/${media.image}" >
+                    <img role="img" aria-label="image agrandi ${media.title}" src="./img/${name}/${media.image}" tabindex="0" alt="">
                 </div>
                 
                 `
@@ -125,7 +125,7 @@ export class View {
                      <div class="box__photographer--list--container" >
                         <div class="box__photographer--list--img" >
 
-                            <video  role="video" muted   onclick="openModal()"  aria-label = "vignette video du photographe" >
+                            <video  role="video" muted   onclick="openModal()"  aria-label = "vignette video du photographe" tabindex="0">
                             <source src="./img/${name}/${media.video}"
                                     type="video/mp4" tabindex="0">
                             Sorry, your browser doesn't support embedded videos.
@@ -145,11 +145,11 @@ export class View {
                 
                 `
                 modalTemplate += `
-                 <div class="mySlides">
+                 <div  role="dialog" aria-labelledby="myDialog" class="mySlides">
                     <!--<div class="numbertext">1 / 4</div>-->
-                       <video  role="video" aria-label = "video du photographe" controls  muted width=100%  >
+                       <video  role="video" aria-label = "video du photographe" controls  muted width=100%  tabindex="0">
                             <source src="./img/${name}/${media.video}"
-                                    type="video/mp4">
+                                    type="video/mp4" >
                             Sorry, your browser doesn't support embedded videos.
                         </video> 
                 </div>
