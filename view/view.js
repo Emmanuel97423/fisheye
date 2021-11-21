@@ -98,13 +98,13 @@ export class View {
                 contentTemplate += `
 
                 <div class="box__photographer--list--container">
-                      <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo" src="./img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow" tabindex="0"></div>
+                      <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo ${media.title} " src="./img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow" tabindex="0"></div>
 
                     <div class="box__photographer--list--data">
                         <p aria-label="Titre du média" tabindex="0">${media.title}</p>
                         <div class=likesBox     >
                             <p class="likes" tabindex="0" aria-label="Nombre de likes">${media.likes}</p>
-                        <i class="fas fa-heart" aria-label="likes" tabindex="0"></i>
+                        <i class="fas fa-heart" aria-label="icone likes" tabindex="0"></i>
                         </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@ export class View {
                      <div class="box__photographer--list--container" >
                         <div class="box__photographer--list--img" >
 
-                            <video  role="video" muted   onclick="openModal()"  aria-label = "vignette video du photographe" tabindex="0">
+                            <video  role="video" muted   onclick="openModal()"  aria-label = "vignette video ${media.title}" tabindex="0">
                             <source src="./img/${name}/${media.video}"
                                     type="video/mp4" tabindex="0">
                             Sorry, your browser doesn't support embedded videos.
@@ -136,7 +136,7 @@ export class View {
                                 <p aria-label="titre-media" tabindex="0">${media.title}</p>
                                 <div class=likesBox>
                                     <p class="likes" aria-label="Nombre de likes" tabindex="0">${media.likes}</p>
-                                <i class="fas fa-heart" tabindex="0"></i>
+                                <i class="fas fa-heart" aria-label="icone likes" tabindex="0"></i>
                                 </div>
                         </div>
 
