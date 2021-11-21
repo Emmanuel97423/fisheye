@@ -65,9 +65,9 @@ export class View {
 
         result = `
             <div class="box__photographer--text">
-            <h1 class=box__photographer--title aria-label="Nom du photographe: ${photographer[0].name}" tabindex="0">${photographer[0].name}</h1>
-            <h2 aria-label="Ville du photographe: ${photographer[0].city}" tabindex="0">${photographer[0].city}, ${photographer[0].country}</h2>
-            <p aria-label="Mot du photographe" tabindex="0">${photographer[0].tagline}</p>
+            <h1 class=box__photographer--title aria-label="Nom du photographe: ${photographer[0].name}." tabindex="0">${photographer[0].name}</h1>
+            <h2 aria-label="Ville du photographe: ${photographer[0].city}, ${photographer[0].country}." tabindex="0">${photographer[0].city}, ${photographer[0].country}</h2>
+            <p aria-label="Mot du photographe" tabindex="0">${photographer[0].tagline}.</p>
             <ul id ='tagsList' aria-label="Navigation par tag">
             
                 ${tagsTemplate}
@@ -98,10 +98,10 @@ export class View {
                 contentTemplate += `
 
                 <div class="box__photographer--list--container">
-                      <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo ${media.title} " src="./img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow" tabindex="0"></div>
+                      <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo: ${media.title}. " src="./img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow" tabindex="0"></div>
 
                     <div class="box__photographer--list--data">
-                        <p aria-label="Titre du média" tabindex="0">${media.title}</p>
+                        <p aria-label="Titre du média:" tabindex="0">${media.title}</p>
                         <div class=likesBox     >
                             <p class="likes" tabindex="0" aria-label="Nombre de likes">${media.likes}</p>
                         <i class="fas fa-heart" aria-label="icone likes" tabindex="0"></i>
