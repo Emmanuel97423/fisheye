@@ -2,7 +2,7 @@
 
 const myForm = document.getElementById('formModal__content')
 
-
+//Soumission du formulaire de contact
 
 myForm.addEventListener('submit', (e) => {
     e.preventDefault()

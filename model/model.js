@@ -1,7 +1,10 @@
 const url = './model/data.json'
 
+//Factory method
+
 class Photographers {
 
+    //Objet contenant tous les photographes 
 
     async getObject() {
 
@@ -15,13 +18,13 @@ class Photographers {
             }); //possibilité du catch;
             let data = await result.json();
 
+            //Liste des photographes et leur coordonnées
             let photographers = data.photographers.map((photographer) => {
                 const { id, name, city, country, tags, tagline, portrait, price } = photographer;
-                // console.log('photographer:', photographer)
 
                 return { id, name, city, country, tags, tagline, portrait, price };
             });
-            // console.log('photographers:', photographers)
+
             return photographers;
 
         } catch (error) {
@@ -30,6 +33,7 @@ class Photographers {
 
     }
 
+    //Objet contenant les médias  d'un photographe par son id 
     async getObjectById(id) {
         try {
             //             //requête FETCH
@@ -43,19 +47,12 @@ class Photographers {
 
             let photographer = await data.photographers.filter(photographer => photographer.id == id)
 
-
-            // let photographers = data.photographers.map((photographer) => {
-            //     const { id, name, city, country, tags, tagline, portrait, } = photographer;
-            //     // console.log('photographer:', photographer)
-
-            //     return { id, name, city, country, tags, tagline, portrait, };
-            // });
-
             return photographer;
         } catch (error) {
             console.error(error);
         }
     }
+    //Objet contenant tous les photographes par tag sélectionné
     async getObjectByTags(tagsSelected) {
         this._tagsSelected = tagsSelected.replace('#', '').toLowerCase()
 
@@ -90,6 +87,7 @@ class Photographers {
 
 class Medias {
 
+    //Objet contenant les médias selon l'id dun photographe 
     async getObjectById(id) {
         try {
             //requête FETCH
@@ -108,7 +106,7 @@ class Medias {
             console.error(error);
         }
     }
-
+    //Objet contenant les médias filtrer par nombre de likes 
     async getObjectByLikes(id) {
         try {
             //requête FETCH
@@ -153,6 +151,7 @@ class Medias {
             console.error(error);
         }
     }
+    //Objet contenant les médias filtrer par date
     async getObjectByDate(id) {
         try {
             //requête FETCH
@@ -174,6 +173,7 @@ class Medias {
             console.error(error);
         }
     }
+    //Objet contenant les médias filtrer par titre ordre alphabetique
 
     async getObjectByTitle(id) {
         try {
@@ -197,41 +197,10 @@ class Medias {
         }
     }
 
-    // async getLikesMethod(id) {
-    //     try {
-    //         //requête FETCH
-    //         let result = await fetch('./model/data.json', {
-    //             method: "GET",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //         })
-    //         let data = await result.json();
-
-    //         // let medias = data.media
-
-    //         let media = await data.media.filter(item => item.id == 2523434634)
-
-    //         // for (const media of medias) {
-    //         //     // console.log('media like:', media.likes)
-    //         //     // console.log('media id:', media.id)
-    //         //     const likeBtn = document.querySelector('.fa-heart')
-    //         //     console.log('likeBtn:', likeBtn)
-    //         //     likeBtn.addEventListener('click', (e) => {
-    //         //         console.log('click to')
-    //         //     })
-
-    //         // }
-
-
-
-    //         return media;
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
 
 }
+
+//Factory
 
 class Factory {
     // Get all Data

@@ -2,7 +2,7 @@
 
 export class View {
     constructor() { }
-    //List all photographers
+    //Liste tous les photographes
     displayPhotographers(photographers) {
         const photographersListDOM = document.querySelector("#homeCard");
         let result = "";
@@ -42,7 +42,7 @@ export class View {
 
         photographersListDOM.innerHTML = result;
     }
-    //Get One photographer
+    //Filtre un photographe par son id
     displayPhotographerById(photographer) {
 
         const photographerDOM = document.querySelector("#photographer");
@@ -82,7 +82,7 @@ export class View {
         photographerDOM.innerHTML = result
 
     }
-    //List content by photographer
+    //Liste le contenu médias d'un photographe
     displayContentById(medias, name) {
         const contentDOM = this.getElement("#content__list")
         const modalDOM = this.getElement('#modal__content')
@@ -246,7 +246,7 @@ export class View {
 
 
     }
-    //Display all like 
+    //Affiche le total des likes par photographe
     displayAllLike(medias, price) {
         const likeDOM = this.getElement('#total__likes')
         const reducer = (previousValue, currentValue) => previousValue + currentValue;
@@ -276,13 +276,14 @@ export class View {
 
 
     }
+    //Création d'un element du DOM
     createElement(tag, className) {
         const element = document.createElement(tag)
         if (className) element.classList.add(className)
 
         return element
     }
-    // Retrieve an element from the DOM
+    // Sélection d'un élement du DOM
     getElement(selector) {
         const element = document.querySelector(selector)
 

@@ -1,18 +1,16 @@
 import { View } from '../view/view.js'
 import { PhotographersManager, MediasManager } from '../model/model.js'
-// import { Filter } from '../utils/filter.js'
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
 
-//Photographe name for media link
 let photographerName = ""
 let medias = {}
-
 let price = ""
 
-//Photographer Manager
+//Photographe Manager
 const photoManager = new PhotographersManager()
+//Affichage données d'un photographe par son id
 photoManager.getDataById(id).then((result) => {
 
     price = result[0].price
@@ -24,25 +22,26 @@ photoManager.getDataById(id).then((result) => {
 }).catch((error) => { console.error(error) })
 
 
-//Media manager
+//Medias manager
 const mediaManager = new MediasManager()
+//Affichage des médias d'un photographe trier par son ID
 mediaManager.getDataById(id).then((result) => {
 
     const mediaView = new View();
 
     mediaView.displayContentById(result, photographerName)
-    //display all likes
+    //Affiche de tous les likes et du tarif
     mediaView.displayAllLike(result, price)
-    //display price
+
     likesInc()
-    // mediaView.displayVideoById(result, photographerName)
+
 
 }).catch((error) => {
     console.log(error)
 })
 
 
-// Filter
+// Filtrage
 const select = document.getElementById('select');
 select.addEventListener('change', (e) => {
     e.preventDefault();
@@ -51,7 +50,7 @@ select.addEventListener('change', (e) => {
         mediaManager.getDataByLikes(id).then((result) => {
             mediaView.displayContentById(result, photographerName)
             likesInc()
-            // mediaView.displayVideoById(result, photographerName)
+
         }).catch((error) => { console.log(error) })
     } else if (e.target.value == 'date') {
         mediaManager.getDataByDate(id).then((result) => {
@@ -69,7 +68,7 @@ select.addEventListener('change', (e) => {
 
 })
 
-//Likes System
+//Incrémentation des likes
 
 const likesInc = () => {
 
@@ -98,6 +97,8 @@ const likesInc = () => {
 
 }
 likesInc()
+
+//Navigation par tags
 const storage = localStorage
 
 setTimeout(() => {
@@ -111,24 +112,3 @@ setTimeout(() => {
         })
     })
 }, 2000)
-
-
-
-// const tags = document.querySelectorAll('span')
-// for (const tag of tags) {
-//     tag.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         const photographerView = new View();
-
-
-//         photoManager.getDataByTags(tag.innerHTML).then((result) => {
-//             console.log('result:', result)
-//             photographerView.displayPhotographers(result)
-//             // window.open('./index.html', "_self")
-
-
-//         }).catch((error) => { console.log(error) })
-
-//     })
-
-// }
