@@ -89,10 +89,11 @@ setInterval(() => {
 
 
 //Navigation clavier
-window.addEventListener("keydown", function (event) {
-    if (event.defaultPrevented) {
-        return; // Ne devrait rien faire si l'événement de la touche était déjà consommé.
-    }
+window.addEventListener("keydown", (event) => {
+    // if (event.defaultPrevented) {
+    //     return; 
+    // Ne devrait rien faire si l'événement de la touche était déjà consommé.
+    // }
 
     switch (event.key) {
         case "ArrowDown":
