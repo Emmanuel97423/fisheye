@@ -50,11 +50,7 @@ export class View {
         let tagsTemplate = ""
         let tags = photographer[0].tags
 
-        // for (const tag of tags) {
 
-        //     tagsTemplate += ` <li><span class="tag" aria-label=" tag">#${tag}</span></li>`
-
-        // }
 
         tags.forEach((tag, index) => {
 
