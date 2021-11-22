@@ -13,8 +13,14 @@ h1{
     color: $primary-text;
     @include media-min ("desktop-1024") {
         font-size: 25px;
-    }
-    
+    } 
+}
+#modal-heading{
+    color: black;
+    font-size: 52px;
+}
+#title {
+    color: $secondary-text-red;
 }
 h2{
     font-family: DM Sans;

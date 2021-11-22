@@ -2,14 +2,31 @@
 
 const modalForm = document.getElementById('formModal')
 
-//Ouverture de la modal formulaire de contact
+const close = document.getElementById('close')
+
+//Fermeture de la modal formulaire de contact
 const closeModalForm = () => {
     modalForm.style.display = 'none'
 }
-//Fermeture de la modal formulaire de contact
+//Ouverture de la modal formulaire de contact
 const openModalForm = () => {
-    modalForm.style.display = 'block'
+
+    window.setTimeout(() => {
+        document.getElementById('formModal__content').focus();
+    }, 0)
+
+
+    modalForm.style.display = 'block';
+    window.addEventListener("keydown", (event) => {
+        if (event.key == "Escape") {
+            closeModalForm()
+        }
+    })
 }
+
+
+
+
 
 
 

@@ -76,6 +76,15 @@ h1 {
   }
 }
 
+#modal-heading {
+  color: black;
+  font-size: 52px;
+}
+
+#title {
+  color: #901C1C;
+}
+
 h2 {
   font-family: DM Sans;
   font-size: 36px;
@@ -330,6 +339,9 @@ p {
   cursor: pointer;
 }
 
+.box__photographer {
+  z-index: 0;
+}
 .box__photographer--container {
   height: auto;
   display: flex;
@@ -537,7 +549,7 @@ p {
 }
 .btn:hover {
   background-color: #D3573C;
-  box-shadow: 0 0.125em rgba(255, 255, 255, 0.4), inset 0 0.063em rgba(255, 255, 255, 0.4), inset 0 -0.188em #901C1C;
+  color: black;
 }
 
 .btn:focus {
@@ -700,6 +712,10 @@ img.hover-shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+[role=dialog][data-open] {
+  display: block;
+}
+
 .formModal {
   display: none;
   position: fixed;
@@ -707,10 +723,11 @@ img.hover-shadow {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
-  overflow: auto;
+  height: 100vh;
+  overflow: scroll;
   background-color: #D3573C;
   text-align: center;
+  pointer-events: auto;
 }
 @media screen and (min-width: 1024px) {
   .formModal {
@@ -719,7 +736,7 @@ img.hover-shadow {
 }
 .formModal form {
   width: 100%;
-  height: 50%;
+  height: 80%;
   margin: 0 auto;
   padding: 5rem 0;
   display: flex;
@@ -735,20 +752,28 @@ img.hover-shadow {
   }
 }
 .formModal__header h2 {
+  font-size: 32px;
   color: black;
 }
 .formModal__input {
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  color: white;
+  color: black;
   margin: 1rem 0 0 0;
 }
 .formModal__input input {
   width: 100%;
+  height: 50px;
   padding: 0.5rem;
   border-radius: 5px;
+  border: none;
+}
+.formModal label {
+  font-size: 32px;
+  margin: 0 0 1rem 0;
 }
 
 #message {

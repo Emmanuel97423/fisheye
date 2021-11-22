@@ -108,17 +108,18 @@
       
     </footer> -->
   </div>
-  <div class="formModal" id ="formModal">
-     <span class="close cursor" onclick="closeModalForm()">&times;</span>
-            <form  id ="formModal__content">
-              <div class="formModal__header"><h2>Contactez-moi</h2></div>
+  <div class="formModal" id="formModal" role="dialog" aria-modal="true" aria-describedby="formModal__content">
+     <span id="close" class="close cursor" aria-label="close" onclick="closeModalForm()">&times;</span>
+     
+            <form  id="formModal__content" aria-label="Contact"tabindex="0">
+                   <h1 id="modal-heading">Contactez-moi</h1>
                 <div class="formModal__input">
                 <label for="lastname">Prénom: </label>
-                <input type="text" name="lastname" id="lastname" required>
+                <input type="text" name="lastname" id="lastname" minlength="2" pattern="[a-zA-Z]+" required >
               </div>
               <div class="formModal__input">
                 <label for="name">Nom: </label>
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" id="name" minlength="2" pattern="[a-zA-Z]+" required>
               </div>
               <div class="formModal__input">
                 <label for="e-mail">Email: </label>
@@ -126,9 +127,9 @@
               </div>
               <div class="formModal__input">
                 <label for="message">Message: </label>
-                <input type="text-area" name="message" id="message" >
+                <input type="text-area" name="message" id="message" maxlength="200">
               </div>
-              <button class="btn ">Envoyer</button>
+              <button class="btn btn-xl ">Envoyer</button>
             </form>
       </div>
 
@@ -137,7 +138,7 @@
 <script async type='module' src='controllers/photographer.js'></script>
 <!-- <script async type='module' src='utils/lightboxClass.js'></script> -->
 <script src='utils/modal.js'></script>
-<script async type='module' src='utils/form.js'></script>
+<script src='utils/form.js'></script>
  <script  src='utils/links.js'></script>
  <!-- <script async type='module' src='script.js'></script> -->
  <!-- <script async type='module' src='utils/likes.js'></script> -->

@@ -21,7 +21,8 @@
     background-color: $primary-bg;
     &:hover {
         background-color:$secondary-bg;
-        box-shadow: 0 .125em rgba(255,255,255,.4), inset 0 .063em   rgba(255,255,255,.4), inset 0 -0.188em $secondary-text-red;
+        color:black;
+        // box-shadow: 0 .125em rgba(255,255,255,.4), inset 0 .063em   rgba(255,255,255,.4), inset 0 -0.188em $secondary-text-red;
     }
 };
 @mixin get_size($height, $font) {
