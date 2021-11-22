@@ -90,6 +90,20 @@ const likesInc = () => {
 
             })
         })
+        likeBtn.forEach(btn => {
+            let nextNode = btn.nextElementSibling
+            nextNode.addEventListener('keydown', (e) => {
+                e.preventDefault();
+
+                if (e.key == 'Enter') {
+                    btn.innerText++;
+                    totalLikeDOM.innerText++
+                } else if (e.key == 'Tab')
+                    if (totalLikeDOM.offsetParent.nextElementSibling == null) {
+                        totaLikeDOM.blur()
+                    } else { totalLikeDOM.offsetParent.nextElementSibling.childNodes[0].focus() }
+            })
+        })
     } catch (error) {
         console.log(error)
     }
