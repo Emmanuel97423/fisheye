@@ -23,13 +23,13 @@
         
     </section>
     <!-- Filter -->
-  <div class="box__photographer--filter" aria-label="Filtre de navigation" role="filter" >
+  <div class="box__photographer--filter"   >
     <label for="select">Trier par:</label>
-    <select name="select" id="select" tabindex="0">
-        <option >--Trier</option>
-        <option value="popularity">Popularité</option>
-        <option value="date">Date</option>
-        <option value="title">Titre</option>
+    <select role="select" name="select" id="select" tabindex="0" aria-label="Filtre de navigation" >
+        <option value="trie" aria-hidden >--Trier</option>
+        <option aria-label="Popularité" value="popularity" aria-selected='true'>Popularité</option>
+        <option aria-label="Date" value="date">Date</option>
+        <option aria-label="Titre" value="title">Titre</option>
     </select>
     </div>
     <section id="content__list" class="box__photographer--list" aria-label="Contenu du photographe">

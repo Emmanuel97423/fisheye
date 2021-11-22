@@ -7,7 +7,7 @@ const openModal = () => {
     document.getElementById("myModal").style.display = "block";
     window.setTimeout(() => {
         document.getElementById('myModal').focus();
-    }, 0)
+    }, 2000)
     document.querySelectorAll(".box__photographer--list--container").forEach((slide, index) => {
 
         slide.addEventListener('click', (e) => {

@@ -94,7 +94,7 @@ export class View {
                 contentTemplate += `
 
                 <div class="box__photographer--list--container">
-                      <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo: ${media.title}. " src="./img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow" tabindex="0"></div>
+                      <div class="box__photographer--list--img"><img role="img" aria-label="vignette de la photo: ${media.title}." src="./img/${name}/${media.image}" alt="${media.title}" onclick="openModal()" class="hover-shadow img" tabindex="0"></div>
 
                     <div class="box__photographer--list--data">
                         <p aria-label="Titre du média:" tabindex="0">${media.title}</p>
@@ -121,7 +121,7 @@ export class View {
                      <div class="box__photographer--list--container" >
                         <div class="box__photographer--list--img" >
 
-                            <video  role="video" muted   onclick="openModal()"  aria-label = "vignette video ${media.title}" tabindex="0">
+                            <video class="img"  role="video" muted   onclick="openModal()"  aria-label = "vignette video ${media.title}" tabindex="0">
                             <source src="./img/${name}/${media.video}"
                                     type="video/mp4" tabindex="0">
                             Sorry, your browser doesn't support embedded videos.
