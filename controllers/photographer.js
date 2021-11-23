@@ -41,32 +41,61 @@ mediaManager.getDataById(id).then((result) => {
 })
 
 
-// Filtrage
-const select = document.getElementById('select');
-select.addEventListener('change', (e) => {
-    e.preventDefault();
-    const mediaView = new View();
-    if (e.target.value == 'popularity') {
-        mediaManager.getDataByLikes(id).then((result) => {
-            mediaView.displayContentById(result, photographerName)
-            likesInc()
+const options = document.querySelectorAll('.select')
+options.forEach(option => {
 
-        }).catch((error) => { console.log(error) })
-    } else if (e.target.value == 'date') {
-        mediaManager.getDataByDate(id).then((result) => {
-            mediaView.displayContentById(result, photographerName)
-            likesInc()
-        }).catch((error) => { console.log(error) })
+    option.addEventListener('click', (e) => {
+        e.preventDefault()
+        const mediaView = new View();
+        if (e.target.value == 'popularity') {
+            mediaManager.getDataByLikes(id).then((result) => {
+                mediaView.displayContentById(result, photographerName)
+                likesInc()
 
-    } else if (e.target.value == 'title') {
-        mediaManager.getDataByTitle(id).then((result) => {
-            mediaView.displayContentById(result, photographerName)
-            likesInc()
-        }).catch((error) => { console.log(error) })
+            }).catch((error) => { console.log(error) })
+        } else if (e.target.value == 'date') {
+            mediaManager.getDataByDate(id).then((result) => {
+                mediaView.displayContentById(result, photographerName)
+                likesInc()
+            }).catch((error) => { console.log(error) })
 
-    }
+        } else if (e.target.value == 'title') {
+            mediaManager.getDataByTitle(id).then((result) => {
+                mediaView.displayContentById(result, photographerName)
+                likesInc()
+            }).catch((error) => { console.log(error) })
+
+        }
+    })
 
 })
+
+// Filtrage
+// const select = document.getElementById('select');
+// select.addEventListener('change', (e) => {
+//     e.preventDefault();
+//     const mediaView = new View();
+//     if (e.target.value == 'popularity') {
+//         mediaManager.getDataByLikes(id).then((result) => {
+//             mediaView.displayContentById(result, photographerName)
+//             likesInc()
+
+//         }).catch((error) => { console.log(error) })
+//     } else if (e.target.value == 'date') {
+//         mediaManager.getDataByDate(id).then((result) => {
+//             mediaView.displayContentById(result, photographerName)
+//             likesInc()
+//         }).catch((error) => { console.log(error) })
+
+//     } else if (e.target.value == 'title') {
+//         mediaManager.getDataByTitle(id).then((result) => {
+//             mediaView.displayContentById(result, photographerName)
+//             likesInc()
+//         }).catch((error) => { console.log(error) })
+
+//     }
+
+// })
 
 //Incrémentation des likes
 
@@ -133,3 +162,6 @@ setTimeout(() => {
     })
 }, 2000)
 
+// $(document).on('click', '.dropdown-menu label', function (e) {
+//     e.stopPropagation();
+// });

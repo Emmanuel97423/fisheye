@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/style.css">
-     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-     
-      <!-- <script  async  type ='module' src='utils/filter.js'></script> -->
-      
-      <script async type='module' src='controllers/photographer.js'></script>
-       
-      
-      <!-- <script defer src='utils/keyboardEvent.js'></script> -->
-      <!-- <script async type='module' src='utils/lightboxClass.js'></script> -->
-      <script defer src='utils/modal.js'></script>
-      <script defer src='utils/form.js'></script>
-      <script  defer src='utils/links.js'></script>
-      <script  defer src='utils/lightbox.js'></script>      
-      <!-- <script async type='module' src='script.js'></script> -->
-      <!-- <script async type='module' src='utils/likes.js'></script> -->
 
-     
+  <!-- <script  async  type ='module' src='utils/filter.js'></script> -->
 
-    <title>Fisheye - Page photographe</title>
+  <script async type='module' src='controllers/photographer.js'></script>
+
+
+  <!-- <script defer src='utils/keyboardEvent.js'></script> -->
+  <!-- <script async type='module' src='utils/lightboxClass.js'></script> -->
+  <script defer src='utils/modal.js'></script>
+  <script defer src='utils/form.js'></script>
+  <script defer src='utils/links.js'></script>
+  <script defer src='utils/lightbox.js'></script>
+  <!-- <script async type='module' src='script.js'></script> -->
+  <script defer src='utils/filter.js'></script>
+
+
+
+  <title>Fisheye - Page photographe</title>
 </head>
+
 <body>
 
 
-<div class="box__photographer--container">
-          <!-- Navigation bar -->
+  <div class="box__photographer--container">
+    <!-- Navigation bar -->
     <nav class=box__photographer--nav>
-       
-            <img src="img/logo.png" id="logo__top" alt="Logo Fisheye - lien vers page d'accueil" role="img" tabindex="0">
-       
+
+      <img src="img/logo.png" id="logo__top" alt="Logo Fisheye - lien vers page d'accueil" role="img" tabindex="0">
+
     </nav>
     <section id="photographer" class="box__photographer--data" aria-label="Coordonnées du photographe">
-        
+
     </section>
     <!-- Filter -->
-  <div class="box__photographer--filter"   >
+    <!-- <div class="box__photographer--filter"   >
     <label for="select">Trier par:</label>
     <select role="select" name="select" id="select" tabindex="0" aria-label="Filtre de navigation" >
         <option value="trie" aria-hidden >--Trier</option>
@@ -48,27 +51,76 @@
         <option aria-label="Date" value="date">Date</option>
         <option aria-label="Titre" value="title">Titre</option>
     </select>
+    </div> -->
+
+
+
+
+    <div class="dropdown" role="select">
+      <label for="select">Trier par:</label>
+      <div class='drop-group'>
+        <button onclick="filter()" id="select" class="select dropbtn" value="popularity">Popularité<i
+            class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-up" style="display:none" aria-hidden="true"></i></button>
+        <!-- <button onclick="filter()" class="dropbtn" tabindex="0">Trier</button> -->
+        <div id="myDropdown" class="dropdown-content">
+          <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
+          <!-- <button  onclick="filter()" class="select dropbtn" value="popularity">Popularité</button> -->
+          <button class="select dropbtn" value="date">Date</button>
+          <button class="select dropbtn" value="title">Titre</button>
+
+        </div>
+      </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section id="content__list" class="box__photographer--list" aria-label="Contenu du photographe">
-        
+
 
 
     </section>
 
     <!-- total likes -->
-    <footer id="total__likes" class="total__likes" >
-       
+    <footer id="total__likes" class="total__likes">
+
     </footer>
 
     <!-- The Modal/Lightbox -->
-<div id="myModal" class="modal" >
-  <span class="close cursor" onclick="closeModal()" aria-labelledby="Fermer la lightbox" tabindex="0">&times;</span>
-  <div  class="modal-content">
-    <div id= "modal__content" role="dialog" aria-labelledby="myDialog" tabindex="1">
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()" aria-labelledby="Fermer la lightbox" tabindex="0">&times;</span>
+      <div class="modal-content">
+        <div id="modal__content" role="dialog" aria-labelledby="myDialog" tabindex="1">
 
 
-    </div>
-    <!-- <div class="mySlides">
+        </div>
+        <!-- <div class="mySlides">
       <div class="numbertext">1 / 4</div>
       <img src="/img/Mimi/Animals_Rainbow.jpg" >
     </div>
@@ -88,17 +140,17 @@
       <img src="/img/Mimi/Animals_Rainbow.jpg" >
     </div> -->
 
-    <!-- Next/previous controls -->
-    <a class="prev" onclick="plusSlides(-1)" tabindex="2" aria-label="Image précédente">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)" tabindex="3" aria-label="Image suivante">&#10095;</a>
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="plusSlides(-1)" tabindex="2" aria-label="Image précédente">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)" tabindex="3" aria-label="Image suivante">&#10095;</a>
 
-    <!-- Caption text -->
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
+        <!-- Caption text -->
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
 
-    <!-- Thumbnail image controls -->
-    <!-- <div class="column">
+        <!-- Thumbnail image controls -->
+        <!-- <div class="column">
       <img class="demo" src="/img/Mimi/Animals_Rainbow.jpg" onclick="currentSlide(1)" alt="Nature">
     </div>
 
@@ -113,8 +165,8 @@
     <div class="column">
       <img class="demo" src="/img/Mimi/Animals_Rainbow.jpg" onclick="currentSlide(4)" alt="Lights">
     </div> -->
-  </div>
-</div>
+      </div>
+    </div>
 
 
 
@@ -126,31 +178,32 @@
     </footer> -->
   </div>
   <div class="formModal" id="formModal" role="dialog" aria-modal="true" aria-describedby="formModal__content">
-     <span id="close" class="close cursor" aria-label="close" onclick="closeModalForm()">&times;</span>
-     
-            <form  id="formModal__content" aria-label="Contact"tabindex="0">
-                   <h1 id="modal-heading">Contactez-moi</h1>
-                <div class="formModal__input">
-                <label for="lastname">Prénom: </label>
-                <input type="text" name="lastname" id="lastname" minlength="2" pattern="[a-zA-Z]+" required >
-              </div>
-              <div class="formModal__input">
-                <label for="name">Nom: </label>
-                <input type="text" name="name" id="name" minlength="2" pattern="[a-zA-Z]+" required>
-              </div>
-              <div class="formModal__input">
-                <label for="e-mail">Email: </label>
-                <input type="e-mail" name="e-mail" id="e-mail" required>
-              </div>
-              <div class="formModal__input">
-                <label for="message">Message: </label>
-                <input type="text-area" name="message" id="message" maxlength="200">
-              </div>
-              <button class="btn btn-xl ">Envoyer</button>
-            </form>
+    <span id="close" class="close cursor" aria-label="close" onclick="closeModalForm()">&times;</span>
+
+    <form id="formModal__content" aria-label="Contact" tabindex="0">
+      <h1 id="modal-heading">Contactez-moi</h1>
+      <div class="formModal__input">
+        <label for="lastname">Prénom: </label>
+        <input type="text" name="lastname" id="lastname" minlength="2" pattern="[a-zA-Z]+" required>
       </div>
+      <div class="formModal__input">
+        <label for="name">Nom: </label>
+        <input type="text" name="name" id="name" minlength="2" pattern="[a-zA-Z]+" required>
+      </div>
+      <div class="formModal__input">
+        <label for="e-mail">Email: </label>
+        <input type="e-mail" name="e-mail" id="e-mail" required>
+      </div>
+      <div class="formModal__input">
+        <label for="message">Message: </label>
+        <input type="text-area" name="message" id="message" maxlength="200">
+      </div>
+      <button class="btn btn-xl ">Envoyer</button>
+    </form>
+  </div>
 
 
-    
+
 </body>
+
 </html>
