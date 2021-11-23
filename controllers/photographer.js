@@ -99,9 +99,15 @@ const likesInc = () => {
                     btn.innerText++;
                     totalLikeDOM.innerText++
                 } else if (e.key == 'Tab')
-                    if (totalLikeDOM.offsetParent.nextElementSibling == null) {
-                        totaLikeDOM.blur()
-                    } else { totalLikeDOM.offsetParent.nextElementSibling.childNodes[0].focus() }
+                    if (nextNode.offsetParent.nextElementSibling == null) {
+                        nextNode.blur()
+                    } else { nextNode.offsetParent.nextElementSibling.childNodes[0].focus() }
+
+                else if (e.key == 'Shift+Tab') {
+                    if (nextNode.offsetParent.previousElementSibling == null) {
+                        nextNode.blur()
+                    } else { nextNode.offsetParent.previousElementSibling.childNodes[0].focus() }
+                }
             })
         })
     } catch (error) {
