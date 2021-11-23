@@ -58,6 +58,9 @@
             margin:0 4px 0 0;     
             cursor: pointer;              
                     }
+                    span:focus {
+                   border: 1px solid black; 
+                }
     // &--container {
     //     width: 100%;
     //     display: flex;

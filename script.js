@@ -40,7 +40,14 @@ setInterval(() => {
 }, 2000)
 
 
+const span = document.querySelectorAll('span')
+span.forEach(el => {
+    el.addEventListener('click', (e) => {
+        e.preventDefault()
+        e.target.focus()
+        // e.target.style.border = 'solid 1px black'
+    })
 
-
+})
 
 

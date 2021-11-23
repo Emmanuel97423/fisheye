@@ -92,16 +92,16 @@ const showSlides = (n) => {
 
     console.log('n:', n)
     if (n > slides.length - 1) {
-        console.log('slideIndex:', slideIndex);
+        // console.log('slideIndex:', slideIndex);
         slideIndex = 0
     }
 
     else if (n < 0) {
         slideIndex = slides.length - 1
-        console.log('slideIndex :', slideIndex)
+        // console.log('slideIndex :', slideIndex)
     } else if (n > 0) {
         slideIndex = n
-        console.log('slideIndex:', slideIndex)
+        // console.log('slideIndex:', slideIndex)
     } else { slideIndex = 0 }
     // if (n > slides.length - 1) { slideIndex = 0 }
     // if (n < 0) { slideIndex = slides.length - 1 }

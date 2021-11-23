@@ -123,6 +123,10 @@ span {
   color: #901C1C;
 }
 
+span:focus {
+  border: 1px solid black;
+}
+
 p {
   font-family: DM Sans;
   font-size: 11px;
@@ -229,6 +233,9 @@ p {
   padding: 4px;
   margin: 0 4px 0 0;
   cursor: pointer;
+}
+.box__navbar span:focus {
+  border: 1px solid black;
 }
 
 .box__photographer--nav img {
