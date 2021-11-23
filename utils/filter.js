@@ -2,7 +2,7 @@ const arrowUp = document.querySelector(".fa-chevron-up")
 const arrowDown = document.querySelector(".fa-chevron-down")
 const button = document.getElementById("myDropdown")
 const dropGroup = document.querySelector('.drop-group')
-console.log('dropGroup:', dropGroup)
+
 
 
 

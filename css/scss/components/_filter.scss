@@ -30,9 +30,10 @@
 #myInput:focus {outline: 3px solid #ddd;}
 
 .dropdown {
-    margin: 10px 14px;
+display: none;
+margin: 10px 14px;
   position: relative;
-  display: flex;
+ 
   justify-content: flex-start;
   align-items: center;
   label{
@@ -42,25 +43,23 @@
   }
   button {
     color: white;
-  padding: 12px 16px;
+    padding: 12px 16px;
     margin: 10px 14px;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  font-weight: normal;
-  border-top: 2px solid white;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    font-weight: normal;
+    border-top: 2px solid white;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    
 
-  }
-   display: none;
-                 @include media-min ("tablet-up-720") {
-                    display: block;
-                  
-                
-            }
+    }
+    @include media-min ("tablet-up-720") {
+        display:flex;
+    }
+  
 }
 
 .dropdown-content {

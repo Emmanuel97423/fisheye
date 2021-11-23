@@ -564,12 +564,11 @@ p {
 }
 
 .dropdown {
+  display: none;
   margin: 10px 14px;
   position: relative;
-  display: flex;
   justify-content: flex-start;
   align-items: center;
-  display: none;
 }
 .dropdown label {
   margin: 0 1rem 0 0;
@@ -590,7 +589,7 @@ p {
 }
 @media screen and (min-width: 720px) {
   .dropdown {
-    display: block;
+    display: flex;
   }
 }
 
