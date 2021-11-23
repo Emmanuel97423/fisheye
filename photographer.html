@@ -56,18 +56,18 @@
 
 
 
-    <div class="dropdown" role="select">
-      <label for="select">Trier par:</label>
-      <div class='drop-group'>
-        <button onclick="filter()" id="select" class="select dropbtn" value="popularity">Popularité<i
-            class="fas fa-chevron-down"></i>
+    <div class="dropdown" aria-label="Filtre de navigation">
+      <label aria-label="trier par" for="select" tabindex="0">Trier par:</label>
+      <div class='drop-group' role="listbox" tabindex="0">
+        <button role="option" onclick="filter()" id="select" class="select dropbtn" value="popularity"
+          aria-label="popularité">Popularité<i class="fas fa-chevron-down"></i>
           <i class="fas fa-chevron-up" style="display:none" aria-hidden="true"></i></button>
         <!-- <button onclick="filter()" class="dropbtn" tabindex="0">Trier</button> -->
         <div id="myDropdown" class="dropdown-content">
           <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
           <!-- <button  onclick="filter()" class="select dropbtn" value="popularity">Popularité</button> -->
-          <button class="select dropbtn" value="date">Date</button>
-          <button class="select dropbtn" value="title">Titre</button>
+          <button role="option" class="select dropbtn" value="date">Date</button>
+          <button role="option" class="select dropbtn" value="title">Titre</button>
 
         </div>
       </div>

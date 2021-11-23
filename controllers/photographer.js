@@ -150,14 +150,30 @@ likesInc()
 //Navigation par tags
 const storage = localStorage
 
-setTimeout(() => {
+setInterval(() => {
     const tags = document.querySelectorAll('.tag')
+
 
     tags.forEach(tag => {
         tag.addEventListener('click', (e) => {
             e.preventDefault();
             storage.setItem('tagSelected', tag.innerHTML)
             window.open('./', "_self")
+        })
+        tag.addEventListener('keydown', (e) => {
+            e.preventDefault();
+            if (e.key == 'Enter') {
+                storage.setItem('tagSelected', tag.innerHTML)
+                window.open('./', "_self")
+            } else if (e.key == 'Tab') {
+                if (tag.offsetParent.nextElementSibling == null) {
+                    tag.blur()
+                } else { tag.offsetParent.nextElementSibling.childNodes[0].focus() }
+            } else if (e.key == 'Shift+Tab') {
+                if (tag.offsetParent.previousElementSibling == null) {
+                    tag.blur()
+                } else { tag.offsetParent.previousElementSibling.childNodes[0].focus() }
+            }
         })
     })
 }, 2000)

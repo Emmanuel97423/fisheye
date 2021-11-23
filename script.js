@@ -36,8 +36,31 @@ setInterval(() => {
 
         })
 
+        tag.addEventListener('keydown', (e) => {
+            e.preventDefault();
+            const photographerView = new View();
+
+            if (e.key == 'Enter') {
+                photoManager.getDataByTags(tag.innerHTML).then((result) => {
+
+                    photographerView.displayPhotographers(result)
+
+
+                }).catch((error) => { console.log(error) })
+
+            } else if (e.key == 'Tab') {
+                if (tag.offsetParent.nextElementSibling == null) {
+                    tag.blur()
+                } else { tag.offsetParent.nextElementSibling.childNodes[0].focus() }
+            } else if (e.key == 'Shift+Tab') {
+                if (tag.offsetParent.previousElementSibling == null) {
+                    tag.blur()
+                } else { tag.offsetParent.previousElementSibling.childNodes[0].focus() }
+            }
+        })
+
     }
-}, 2000)
+}, 0)
 
 
 const span = document.querySelectorAll('span')

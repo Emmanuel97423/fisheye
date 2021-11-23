@@ -22,7 +22,7 @@ export class View {
             result += `
           <div class="box__list--card aria-label="liste photographes">
             
-             <img class="portrait" role="img" aria-label="Portrait du photographe" src="./img/avatar/${photographer.portrait}" alt="">
+            <a href="photographer.html?id=${photographer.id}"><img class="portrait" role="img" aria-label="Portrait du photographe" src="./img/avatar/${photographer.portrait}" alt=""></a>
                     <div class="box__list--text">
 
                         <a href="photographer.html?id=${photographer.id}"><h2 aria-label="Nom du photographe ${photographer.name}">${photographer.name}</h2></a>
