@@ -569,6 +569,7 @@ p {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  display: none;
 }
 .dropdown label {
   margin: 0 1rem 0 0;
@@ -586,6 +587,11 @@ p {
   border-top: 2px solid white;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+@media screen and (min-width: 720px) {
+  .dropdown {
+    display: block;
+  }
 }
 
 .dropdown-content {

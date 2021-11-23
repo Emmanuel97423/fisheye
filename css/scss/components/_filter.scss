@@ -38,6 +38,7 @@
   label{
     margin:0 1rem 0 0;
     font-weight: bold
+    
   }
   button {
     color: white;
@@ -54,6 +55,12 @@
   
 
   }
+   display: none;
+                 @include media-min ("tablet-up-720") {
+                    display: block;
+                  
+                
+            }
 }
 
 .dropdown-content {
